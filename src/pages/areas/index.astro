@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import pseoData from '../../data/pseo_data.json';
+
+// Get unique locations
+const locations = [...new Map(pseoData.map(item => [item.location.id, item.location])).values()];
+const londonBoroughs = locations.filter(loc => loc.is_london).sort((a, b) => a.name.localeCompare(b.name));
+const ukCities = locations.filter(loc => !loc.is_london).sort((a, b) => a.name.localeCompare(b.name));
+
+const services = [
+  { id: "exterior-house-painting", name: "Exterior Painting" },
+  { id: "commercial-office-decorators", name: "Commercial Decorators" },
+  { id: "wallpaper-hanging-specialists", name: "Wallpaper Hanging" },
+  { id: "kitchen-cabinet-spray-painting", name: "Cabinet Spraying" }
+];
+---
+
+<Layout title="Areas We Cover | ApprovedDecorators">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-8">Areas We Cover</h1>
+    <p class="text-xl text-gray-600 mb-12 max-w-3xl">Find our professional painting and decorating services in your local area. We cover all major UK cities and London boroughs.</p>
+    
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-200">London Boroughs</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {londonBoroughs.map(loc => (
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{loc.name}</h3>
+            <ul class="space-y-2 text-sm">
+              {services.map(service => (
+                <li><a href={`/${service.id}/${loc.id}`} class="text-blue-600 hover:underline">{service.name}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-200">Major UK Cities</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {ukCities.map(loc => (
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{loc.name}</h3>
+            <ul class="space-y-2 text-sm">
+              {services.map(service => (
+                <li><a href={`/${service.id}/${loc.id}`} class="text-blue-600 hover:underline">{service.name}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

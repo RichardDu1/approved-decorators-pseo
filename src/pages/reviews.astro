@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const reviews = [
+  { name: "Sarah Jenkins", location: "London", rating: 5, text: "Absolutely fantastic service. They transformed our Victorian terrace's exterior in just a few days. Very professional and tidy." },
+  { name: "Mark Thompson", location: "Manchester", rating: 5, text: "The team sprayed our old kitchen cabinets and they look brand new. Saved us thousands on a replacement kitchen!" },
+  { name: "David Wright", location: "Birmingham", rating: 5, text: "Hired them for our office renovation. They worked out of hours to minimize disruption. The finish is flawless." },
+  { name: "Emma Davis", location: "Edinburgh", rating: 5, text: "We had luxury wallpaper hung in our living room. The attention to detail around the period features was exceptional." },
+  { name: "James Wilson", location: "Bristol", rating: 5, text: "Reliable, insured, and provided a 12-month guarantee. Gives you great peace of mind when hiring tradesmen." }
+];
+---
+<Layout title="Customer Reviews | ApprovedDecorators">
+  <div class="max-w-7xl mx-auto px-4 py-16">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">Customer Reviews</h1>
+      <p class="text-xl text-gray-600">See what our clients across the UK have to say about our verified decorators.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {reviews.map(review => (
+        <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+          <div class="flex text-yellow-400 mb-4">
+            {[...Array(review.rating)].map(() => (
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            ))}
+          </div>
+          <p class="text-gray-600 mb-6 italic">"{review.text}"</p>
+          <div>
+            <p class="font-bold text-gray-900">{review.name}</p>
+            <p class="text-sm text-gray-500">{review.location}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

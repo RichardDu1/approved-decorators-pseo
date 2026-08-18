@@ -1,0 +1,175 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import pseoData from '../../data/pseo_data.json';
+
+export async function getStaticPaths() {
+  return pseoData.map((data) => {
+    return {
+      params: {
+        service: data.service.id,
+        city: data.location.id
+      },
+      props: {
+        data
+      }
+    }
+  });
+}
+
+const { data } = Astro.props;
+const { service, location, architecture_context, economic_context, proximity_context } = data;
+
+const title = `Expert ${service.name} in ${location.name} | ApprovedDecorators`;
+const description = `Looking for ${service.name.toLowerCase()} in ${location.name}? We offer professional painting and decorating services with a 12-month guarantee. Get a quote today!`;
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="bg-blue-50 py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+        Expert {service.name} in {location.name} 
+        {location.postcode_prefix && <span class="text-blue-600">({location.postcode_prefix})</span>}
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        {service.description} Fast, reliable, and guaranteed quality for properties across {location.name}.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#quote" class="bg-blue-600 text-white px-8 py-3 rounded-md font-semibold text-lg hover:bg-blue-700 transition">Get a Free Quote</a>
+        <a href="tel:08001234567" class="bg-white text-blue-600 border border-blue-600 px-8 py-3 rounded-md font-semibold text-lg hover:bg-blue-50 transition">Call 0800 123 4567</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Context & Pain Points -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Why choose us for {service.name.toLowerCase()} in {location.name}?</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            We understand the specific requirements of properties in {location.name}. Our local experts are trained to handle unique challenges:
+          </p>
+          <ul class="space-y-4">
+            {architecture_context.pain_points.map((point: string) => (
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="mt-10 lg:mt-0 bg-white p-8 rounded-lg shadow-md border border-gray-100" id="quote">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Request a Callback in {location.name}</h3>
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+              <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border" required>
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700">Phone or Email</label>
+              <input type="text" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border" required>
+            </div>
+            <div>
+              <label for="details" class="block text-sm font-medium text-gray-700">Project Details</label>
+              <textarea id="details" name="details" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"></textarea>
+            </div>
+            <button type="button" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              Submit Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Estimated Pricing for {location.name}</h2>
+        <p class="mt-4 text-lg text-gray-600">Transparent, competitive rates for {service.name.toLowerCase()} tailored to local market conditions.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Small Project</h3>
+          <p class="text-gray-500 mb-4">Single room or small facade</p>
+          <div class="text-4xl font-bold text-blue-600 mb-6">From £{economic_context.pricing.small}</div>
+          <ul class="text-left space-y-3 mb-8">
+            <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Materials included</li>
+            <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Standard preparation</li>
+          </ul>
+        </div>
+        
+        <div class="bg-blue-600 rounded-lg shadow-md border border-blue-700 p-8 text-center transform md:-translate-y-4">
+          <div class="text-blue-200 text-sm font-semibold uppercase tracking-wide mb-2">Most Popular</div>
+          <h3 class="text-xl font-semibold text-white mb-2">Medium Project</h3>
+          <p class="text-blue-100 mb-4">Multiple rooms or standard exterior</p>
+          <div class="text-4xl font-bold text-white mb-6">From £{economic_context.pricing.medium}</div>
+          <ul class="text-left space-y-3 mb-8 text-white">
+            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Premium materials</li>
+            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Extensive prep work</li>
+            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Priority scheduling</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Large Project</h3>
+          <p class="text-gray-500 mb-4">Full property or commercial space</p>
+          <div class="text-4xl font-bold text-blue-600 mb-6">From £{economic_context.pricing.large}</div>
+          <ul class="text-left space-y-3 mb-8">
+            <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Dedicated project manager</li>
+            <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Specialist finishes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-10">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {economic_context.faqs.map((faq: {question: string, answer: string}) => (
+          <div class="border-b border-gray-200 pb-6">
+            <h3 class="text-lg font-medium text-gray-900">{faq.question}</h3>
+            <p class="mt-2 text-gray-600">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-linking & Topic Clusters -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Other Services in {location.name}</h3>
+          <ul class="space-y-2">
+            <li><a href={`/exterior-house-painting/${location.id}`} class="text-blue-600 hover:underline">Exterior House Painting</a></li>
+            <li><a href={`/commercial-office-decorators/${location.id}`} class="text-blue-600 hover:underline">Commercial Office Decorators</a></li>
+            <li><a href={`/wallpaper-hanging-specialists/${location.id}`} class="text-blue-600 hover:underline">Wallpaper Hanging Specialists</a></li>
+            <li><a href={`/kitchen-cabinet-spray-painting/${location.id}`} class="text-blue-600 hover:underline">Kitchen Cabinet Spray Painting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Neighbouring Areas We Cover from {location.name}</h3>
+          <ul class="flex flex-wrap gap-2">
+            {proximity_context.nearby_areas.map((area: {id: string, name: string}) => (
+              <li>
+                <a href={`/${service.id}/${area.id}`} class="inline-block bg-white border border-gray-300 rounded px-3 py-1 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition">
+                  {service.name} in {area.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

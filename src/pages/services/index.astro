@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const services = [
+  {
+    id: "exterior-house-painting",
+    name: "Exterior House Painting",
+    description: "Professional exterior painting and weather protection."
+  },
+  {
+    id: "commercial-office-decorators",
+    name: "Commercial Office Decorators",
+    description: "High-quality commercial painting for offices and retail spaces."
+  },
+  {
+    id: "wallpaper-hanging-specialists",
+    name: "Premium Wallpaper Hanging",
+    description: "Specialist wallpaper hanging for luxury and feature walls."
+  },
+  {
+    id: "kitchen-cabinet-spray-painting",
+    name: "Kitchen Cabinet Spray Painting",
+    description: "Transform your kitchen with a factory-finish spray paint."
+  }
+];
+---
+
+<Layout title="Our Painting & Decorating Services | ApprovedDecorators">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-8">Our Services</h1>
+    <p class="text-xl text-gray-600 mb-12 max-w-3xl">Explore our range of professional painting and decorating services available across the UK.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {services.map(service => (
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 hover:shadow-md transition">
+          <h2 class="text-2xl font-bold text-gray-900 mb-3">{service.name}</h2>
+          <p class="text-gray-600 mb-6">{service.description}</p>
+          <a href="/areas" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center">
+            Find {service.name} Near You
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
