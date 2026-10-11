@@ -7,11 +7,13 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "generate:llms": "node scripts/generate_llmstxt.mjs",
+    "build": "node scripts/generate_llmstxt.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.3",
     "tailwindcss": "^4.3.3"
