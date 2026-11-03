@@ -140,3 +140,17 @@ PR 构建：Cloudflare Pages ✅ Deploy successful
   - mock 网络异常 → 显示失败与电话 ✅
 - 首页表单的服务下拉框已在构建产物中核对（4 个服务选项）；首页提交的浏览器测试被本机权限策略拦截，未执行。首页与城市页用的是同一段脚本。
 - 预览站复查见 5.4。
+
+### 5.4 预览站复查（https://f167dd13.approved-decorators-pseo.pages.dev，提交 9d3548d）
+
+| 检查 | 结果 |
+|---|---|
+| `/`、`/about`、`/exterior-house-painting`、`/exterior-house-painting/bristol` | 200 ✅ |
+| 带斜杠旧地址 | 308 → 无斜杠 ✅ |
+| `/nonexistent-page` | 404 ✅ |
+| `/api/quote`（已删除） | 404 ✅ |
+| sitemap 131 个 URL | 131/131 直接 200 ✅ |
+| 城市页：表单指向 `form.highland-travel.com`、无 `/api/quote`；"4.9/5 Client Rating"、"Verified Vetted Provider"、`aggregateRating` 均已恢复；canonical 等于自身路径 | ✅ |
+| 首页："4.9 / 5.0"、"UK's Leading Vetted Painting Network"、服务下拉框 | ✅ |
+| llms.txt："leading" 与 "AI Citation" 段落已恢复 | ✅ |
+| 表单系统 CORS 预检（仅发 `OPTIONS`，未提交任何数据） | 204，`Access-Control-Allow-Origin: *`，允许 `POST` 与 `content-type` ✅ |
