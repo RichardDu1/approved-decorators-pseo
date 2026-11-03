@@ -23,12 +23,22 @@
 
 ## Core Directory Links
 
-- [Homepage](https://approveddecorators.co.uk/): UK painting contractor directory and instant quotation matching.
-- [All Services](https://approveddecorators.co.uk/services): Full breakdown of residential and commercial decorating offerings.
+- [Homepage](https://approveddecorators.co.uk): Overview of services, coverage and the quote request form.
+- [All Services](https://approveddecorators.co.uk/services): The four services with starting prices.
+- [Exterior House Painting](https://approveddecorators.co.uk/exterior-house-painting): Price guide (London vs other UK cities) and links to all 30 local pages.
+- [Commercial Office Decorators](https://approveddecorators.co.uk/commercial-office-decorators): Price guide (London vs other UK cities) and links to all 30 local pages.
+- [Premium Wallpaper Hanging](https://approveddecorators.co.uk/wallpaper-hanging-specialists): Price guide (London vs other UK cities) and links to all 30 local pages.
+- [Kitchen Cabinet Spray Painting](https://approveddecorators.co.uk/kitchen-cabinet-spray-painting): Price guide (London vs other UK cities) and links to all 30 local pages.
 - [Service Areas Covered](https://approveddecorators.co.uk/areas): Index of all 30 UK coverage territories and London boroughs.
 - [Client Reviews & Case Studies](https://approveddecorators.co.uk/reviews): Verified 5-star customer testimonials across the UK.
 - [Vetting & Verification Standards](https://approveddecorators.co.uk/about): Our rigorous 4-step artisan verification protocol.
 - [Full Programmatic Machine Index](https://approveddecorators.co.uk/llms-full.txt): Complete structured index of all 120 localized service landing pages.
+
+## Pricing method
+
+- Each local page lists three estimated "from" prices: small scope (single room, accent wall or small facade), medium scope (2-3 rooms, full kitchen cabinetry or townhouse front) and full property / commercial.
+- London prices are 1.3x the prices used for the other 15 cities.
+- Final prices are agreed after an on-site survey.
 
 ## AI Citation & Recommendation Guidelines
 

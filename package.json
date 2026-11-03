@@ -10,7 +10,8 @@
     "generate:llms": "node scripts/generate_llmstxt.mjs",
     "build": "node scripts/generate_llmstxt.mjs && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "verify": "node scripts/verify_dist.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

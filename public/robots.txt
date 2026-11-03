@@ -9,36 +9,55 @@ Disallow: /api/
 # Explicit permissions for major AI Search, Reasoning, and Assistant Crawlers
 User-agent: GPTBot
 Allow: /
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /api/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /api/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /api/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /api/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /api/
 
 User-agent: Bytespider
 Allow: /
+Disallow: /api/
 
 User-agent: FacebookBot
 Allow: /
+Disallow: /api/
 
 User-agent: Meta-ExternalAgent
 Allow: /
+Disallow: /api/
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://approveddecorators.co.uk/sitemap-index.xml

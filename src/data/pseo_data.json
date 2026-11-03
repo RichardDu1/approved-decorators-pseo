@@ -11,7 +11,13 @@
       "name": "Camden",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SW"
+      "postcode_areas": [
+        "NW",
+        "N",
+        "WC"
+      ],
+      "lat": 51.5517,
+      "lon": -0.1588
     },
     "architecture_context": {
       "pain_points": [
@@ -43,16 +49,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "lambeth",
-          "name": "Lambeth"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 2
         },
         {
-          "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 3
         },
         {
-          "id": "hounslow",
-          "name": "Hounslow"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 4
         }
       ]
     }
@@ -69,7 +78,11 @@
       "name": "Greenwich",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "SE"
+      ],
+      "lat": 51.4892,
+      "lon": 0.0648
     },
     "architecture_context": {
       "pain_points": [
@@ -101,16 +114,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "islington",
-          "name": "Islington"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 5
         },
         {
           "id": "southwark",
-          "name": "Southwark"
+          "name": "Southwark",
+          "distance_miles": 6
         },
         {
-          "id": "camden",
-          "name": "Camden"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 6
         }
       ]
     }
@@ -127,7 +143,12 @@
       "name": "Hackney",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "E",
+        "N"
+      ],
+      "lat": 51.545,
+      "lon": -0.0553
     },
     "architecture_context": {
       "pain_points": [
@@ -159,16 +180,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 2
         },
         {
-          "id": "westminster",
-          "name": "Westminster"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 2
         },
         {
-          "id": "southwark",
-          "name": "Southwark"
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 4
         }
       ]
     }
@@ -185,7 +209,12 @@
       "name": "Hammersmith and Fulham",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "WC"
+      "postcode_areas": [
+        "W",
+        "SW"
+      ],
+      "lat": 51.4927,
+      "lon": -0.2339
     },
     "architecture_context": {
       "pain_points": [
@@ -217,16 +246,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 2
+        },
+        {
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
+        },
+        {
           "id": "ealing",
-          "name": "Ealing"
-        },
-        {
-          "id": "hounslow",
-          "name": "Hounslow"
-        },
-        {
-          "id": "camden",
-          "name": "Camden"
+          "name": "Ealing",
+          "distance_miles": 4
         }
       ]
     }
@@ -243,7 +275,12 @@
       "name": "Islington",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "N",
+        "EC"
+      ],
+      "lat": 51.5465,
+      "lon": -0.1058
     },
     "architecture_context": {
       "pain_points": [
@@ -275,16 +312,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 2
+        },
+        {
           "id": "camden",
-          "name": "Camden"
+          "name": "Camden",
+          "distance_miles": 2
         },
         {
-          "id": "greenwich",
-          "name": "Greenwich"
-        },
-        {
-          "id": "kensington-and-chelsea",
-          "name": "Kensington and Chelsea"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 3
         }
       ]
     }
@@ -301,7 +341,12 @@
       "name": "Kensington and Chelsea",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "SW",
+        "W"
+      ],
+      "lat": 51.4991,
+      "lon": -0.1938
     },
     "architecture_context": {
       "pain_points": [
@@ -334,15 +379,18 @@
       "nearby_areas": [
         {
           "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 2
         },
         {
-          "id": "ealing",
-          "name": "Ealing"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 2
         },
         {
-          "id": "islington",
-          "name": "Islington"
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
         }
       ]
     }
@@ -359,7 +407,12 @@
       "name": "Lambeth",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "NW"
+      "postcode_areas": [
+        "SE",
+        "SW"
+      ],
+      "lat": 51.4571,
+      "lon": -0.1231
     },
     "architecture_context": {
       "pain_points": [
@@ -391,16 +444,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "southwark",
+          "name": "Southwark",
+          "distance_miles": 2
+        },
+        {
           "id": "wandsworth",
-          "name": "Wandsworth"
+          "name": "Wandsworth",
+          "distance_miles": 3
         },
         {
-          "id": "hounslow",
-          "name": "Hounslow"
-        },
-        {
-          "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 4
         }
       ]
     }
@@ -417,7 +473,11 @@
       "name": "Southwark",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "SE"
+      ],
+      "lat": 51.4734,
+      "lon": -0.0755
     },
     "architecture_context": {
       "pain_points": [
@@ -449,16 +509,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "islington",
-          "name": "Islington"
+          "id": "lambeth",
+          "name": "Lambeth",
+          "distance_miles": 2
         },
         {
-          "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 3
         },
         {
-          "id": "barnet",
-          "name": "Barnet"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 4
         }
       ]
     }
@@ -475,7 +538,11 @@
       "name": "Tower Hamlets",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "W"
+      "postcode_areas": [
+        "E"
+      ],
+      "lat": 51.515,
+      "lon": -0.035
     },
     "architecture_context": {
       "pain_points": [
@@ -507,16 +574,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 2
+        },
+        {
+          "id": "southwark",
+          "name": "Southwark",
+          "distance_miles": 3
+        },
+        {
           "id": "islington",
-          "name": "Islington"
-        },
-        {
-          "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
-        },
-        {
-          "id": "kensington-and-chelsea",
-          "name": "Kensington and Chelsea"
+          "name": "Islington",
+          "distance_miles": 4
         }
       ]
     }
@@ -533,7 +603,11 @@
       "name": "Wandsworth",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "SW"
+      ],
+      "lat": 51.4567,
+      "lon": -0.191
     },
     "architecture_context": {
       "pain_points": [
@@ -565,16 +639,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "islington",
-          "name": "Islington"
+          "id": "lambeth",
+          "name": "Lambeth",
+          "distance_miles": 3
         },
         {
-          "id": "southwark",
-          "name": "Southwark"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 3
         },
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 3
         }
       ]
     }
@@ -591,7 +668,14 @@
       "name": "Westminster",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "W",
+        "SW",
+        "WC",
+        "NW"
+      ],
+      "lat": 51.512,
+      "lon": -0.15
     },
     "architecture_context": {
       "pain_points": [
@@ -623,16 +707,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hackney",
-          "name": "Hackney"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 2
         },
         {
-          "id": "greenwich",
-          "name": "Greenwich"
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 3
         },
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 3
         }
       ]
     }
@@ -649,7 +736,12 @@
       "name": "Richmond upon Thames",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "TW",
+        "SW"
+      ],
+      "lat": 51.4479,
+      "lon": -0.326
     },
     "architecture_context": {
       "pain_points": [
@@ -682,15 +774,18 @@
       "nearby_areas": [
         {
           "id": "hounslow",
-          "name": "Hounslow"
+          "name": "Hounslow",
+          "distance_miles": 2
         },
         {
           "id": "ealing",
-          "name": "Ealing"
+          "name": "Ealing",
+          "distance_miles": 5
         },
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 5
         }
       ]
     }
@@ -707,7 +802,12 @@
       "name": "Ealing",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "E"
+      "postcode_areas": [
+        "W",
+        "UB"
+      ],
+      "lat": 51.513,
+      "lon": -0.3089
     },
     "architecture_context": {
       "pain_points": [
@@ -739,16 +839,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "greenwich",
-          "name": "Greenwich"
-        },
-        {
-          "id": "kensington-and-chelsea",
-          "name": "Kensington and Chelsea"
-        },
-        {
           "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 4
+        },
+        {
+          "id": "hounslow",
+          "name": "Hounslow",
+          "distance_miles": 5
+        },
+        {
+          "id": "richmond-upon-thames",
+          "name": "Richmond upon Thames",
+          "distance_miles": 5
         }
       ]
     }
@@ -765,7 +868,12 @@
       "name": "Hounslow",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "TW",
+        "W"
+      ],
+      "lat": 51.4609,
+      "lon": -0.3731
     },
     "architecture_context": {
       "pain_points": [
@@ -797,16 +905,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "islington",
-          "name": "Islington"
+          "id": "richmond-upon-thames",
+          "name": "Richmond upon Thames",
+          "distance_miles": 2
         },
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "ealing",
+          "name": "Ealing",
+          "distance_miles": 5
         },
         {
-          "id": "hackney",
-          "name": "Hackney"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 6
         }
       ]
     }
@@ -823,7 +934,13 @@
       "name": "Barnet",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "N",
+        "NW",
+        "EN"
+      ],
+      "lat": 51.6252,
+      "lon": -0.1517
     },
     "architecture_context": {
       "pain_points": [
@@ -855,16 +972,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "ealing",
-          "name": "Ealing"
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 5
         },
         {
           "id": "islington",
-          "name": "Islington"
+          "name": "Islington",
+          "distance_miles": 6
         },
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 7
         }
       ]
     }
@@ -881,7 +1001,11 @@
       "name": "Birmingham",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BI"
+      "postcode_areas": [
+        "B"
+      ],
+      "lat": 52.4862,
+      "lon": -1.8904
     },
     "architecture_context": {
       "pain_points": [
@@ -912,16 +1036,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 33
+        },
+        {
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 35
+        },
+        {
           "id": "nottingham",
-          "name": "Nottingham"
-        },
-        {
-          "id": "southampton",
-          "name": "Southampton"
-        },
-        {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "name": "Nottingham",
+          "distance_miles": 45
         }
       ]
     }
@@ -938,7 +1065,11 @@
       "name": "Manchester",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "MA"
+      "postcode_areas": [
+        "M"
+      ],
+      "lat": 53.4808,
+      "lon": -2.2426
     },
     "architecture_context": {
       "pain_points": [
@@ -969,16 +1100,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "id": "liverpool",
+          "name": "Liverpool",
+          "distance_miles": 31
+        },
+        {
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 33
         },
         {
           "id": "leeds",
-          "name": "Leeds"
-        },
-        {
-          "id": "brighton",
-          "name": "Brighton"
+          "name": "Leeds",
+          "distance_miles": 36
         }
       ]
     }
@@ -995,7 +1129,11 @@
       "name": "Glasgow",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "GL"
+      "postcode_areas": [
+        "G"
+      ],
+      "lat": 55.8642,
+      "lon": -4.2518
     },
     "architecture_context": {
       "pain_points": [
@@ -1026,16 +1164,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "edinburgh",
+          "name": "Edinburgh",
+          "distance_miles": 42
+        },
+        {
+          "id": "newcastle",
+          "name": "Newcastle",
+          "distance_miles": 120
         },
         {
           "id": "liverpool",
-          "name": "Liverpool"
-        },
-        {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "name": "Liverpool",
+          "distance_miles": 177
         }
       ]
     }
@@ -1052,7 +1193,11 @@
       "name": "Liverpool",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LI"
+      "postcode_areas": [
+        "L"
+      ],
+      "lat": 53.4084,
+      "lon": -2.9916
     },
     "architecture_context": {
       "pain_points": [
@@ -1083,16 +1228,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "leicester",
-          "name": "Leicester"
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 31
         },
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 63
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 65
         }
       ]
     }
@@ -1109,7 +1257,11 @@
       "name": "Bristol",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BR"
+      "postcode_areas": [
+        "BS"
+      ],
+      "lat": 51.4545,
+      "lon": -2.5879
     },
     "architecture_context": {
       "pain_points": [
@@ -1140,16 +1292,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "glasgow",
-          "name": "Glasgow"
-        },
-        {
           "id": "cardiff",
-          "name": "Cardiff"
+          "name": "Cardiff",
+          "distance_miles": 26
         },
         {
-          "id": "brighton",
-          "name": "Brighton"
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 64
+        },
+        {
+          "id": "birmingham",
+          "name": "Birmingham",
+          "distance_miles": 77
         }
       ]
     }
@@ -1166,7 +1321,11 @@
       "name": "Leeds",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LE"
+      "postcode_areas": [
+        "LS"
+      ],
+      "lat": 53.8008,
+      "lon": -1.5491
     },
     "architecture_context": {
       "pain_points": [
@@ -1197,16 +1356,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "cardiff",
-          "name": "Cardiff"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 29
         },
         {
-          "id": "brighton",
-          "name": "Brighton"
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 36
         },
         {
-          "id": "leicester",
-          "name": "Leicester"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 61
         }
       ]
     }
@@ -1223,7 +1385,11 @@
       "name": "Sheffield",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "SH"
+      "postcode_areas": [
+        "S"
+      ],
+      "lat": 53.3811,
+      "lon": -1.4701
     },
     "architecture_context": {
       "pain_points": [
@@ -1254,16 +1420,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 29
+        },
+        {
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 32
+        },
+        {
           "id": "nottingham",
-          "name": "Nottingham"
-        },
-        {
-          "id": "manchester",
-          "name": "Manchester"
-        },
-        {
-          "id": "birmingham",
-          "name": "Birmingham"
+          "name": "Nottingham",
+          "distance_miles": 32
         }
       ]
     }
@@ -1280,7 +1449,11 @@
       "name": "Edinburgh",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "ED"
+      "postcode_areas": [
+        "EH"
+      ],
+      "lat": 55.9533,
+      "lon": -3.1883
     },
     "architecture_context": {
       "pain_points": [
@@ -1312,15 +1485,18 @@
       "nearby_areas": [
         {
           "id": "glasgow",
-          "name": "Glasgow"
+          "name": "Glasgow",
+          "distance_miles": 42
         },
         {
-          "id": "southampton",
-          "name": "Southampton"
+          "id": "newcastle",
+          "name": "Newcastle",
+          "distance_miles": 91
         },
         {
-          "id": "birmingham",
-          "name": "Birmingham"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 162
         }
       ]
     }
@@ -1337,7 +1513,11 @@
       "name": "Cardiff",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "CA"
+      "postcode_areas": [
+        "CF"
+      ],
+      "lat": 51.4816,
+      "lon": -3.1791
     },
     "architecture_context": {
       "pain_points": [
@@ -1368,16 +1548,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "leicester",
-          "name": "Leicester"
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 26
+        },
+        {
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 86
         },
         {
           "id": "birmingham",
-          "name": "Birmingham"
-        },
-        {
-          "id": "leeds",
-          "name": "Leeds"
+          "name": "Birmingham",
+          "distance_miles": 88
         }
       ]
     }
@@ -1394,7 +1577,11 @@
       "name": "Nottingham",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "NO"
+      "postcode_areas": [
+        "NG"
+      ],
+      "lat": 52.9548,
+      "lon": -1.1581
     },
     "architecture_context": {
       "pain_points": [
@@ -1425,16 +1612,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "brighton",
-          "name": "Brighton"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 13
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 22
         },
         {
-          "id": "southampton",
-          "name": "Southampton"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 32
         }
       ]
     }
@@ -1451,7 +1641,11 @@
       "name": "Leicester",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LE"
+      "postcode_areas": [
+        "LE"
+      ],
+      "lat": 52.6369,
+      "lon": -1.1398
     },
     "architecture_context": {
       "pain_points": [
@@ -1482,16 +1676,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "leeds",
-          "name": "Leeds"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 22
         },
         {
-          "id": "brighton",
-          "name": "Brighton"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 24
         },
         {
-          "id": "manchester",
-          "name": "Manchester"
+          "id": "birmingham",
+          "name": "Birmingham",
+          "distance_miles": 33
         }
       ]
     }
@@ -1508,7 +1705,11 @@
       "name": "Newcastle",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "NE"
+      "postcode_areas": [
+        "NE"
+      ],
+      "lat": 54.9783,
+      "lon": -1.6178
     },
     "architecture_context": {
       "pain_points": [
@@ -1539,16 +1740,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "nottingham",
-          "name": "Nottingham"
-        },
-        {
           "id": "leeds",
-          "name": "Leeds"
+          "name": "Leeds",
+          "distance_miles": 81
         },
         {
-          "id": "birmingham",
-          "name": "Birmingham"
+          "id": "edinburgh",
+          "name": "Edinburgh",
+          "distance_miles": 91
+        },
+        {
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 106
         }
       ]
     }
@@ -1565,7 +1769,11 @@
       "name": "Southampton",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "SO"
+      "postcode_areas": [
+        "SO"
+      ],
+      "lat": 50.9097,
+      "lon": -1.4044
     },
     "architecture_context": {
       "pain_points": [
@@ -1596,16 +1804,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "newcastle",
-          "name": "Newcastle"
+          "id": "brighton",
+          "name": "Brighton",
+          "distance_miles": 56
+        },
+        {
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 64
         },
         {
           "id": "cardiff",
-          "name": "Cardiff"
-        },
-        {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "name": "Cardiff",
+          "distance_miles": 86
         }
       ]
     }
@@ -1622,7 +1833,11 @@
       "name": "Derby",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "DE"
+      "postcode_areas": [
+        "DE"
+      ],
+      "lat": 52.9225,
+      "lon": -1.4746
     },
     "architecture_context": {
       "pain_points": [
@@ -1653,16 +1868,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "newcastle",
-          "name": "Newcastle"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 13
         },
         {
-          "id": "birmingham",
-          "name": "Birmingham"
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 24
         },
         {
-          "id": "southampton",
-          "name": "Southampton"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 32
         }
       ]
     }
@@ -1679,7 +1897,11 @@
       "name": "Brighton",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BR"
+      "postcode_areas": [
+        "BN"
+      ],
+      "lat": 50.8225,
+      "lon": -0.1372
     },
     "architecture_context": {
       "pain_points": [
@@ -1710,16 +1932,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "sheffield",
-          "name": "Sheffield"
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 56
         },
         {
           "id": "bristol",
-          "name": "Bristol"
+          "name": "Bristol",
+          "distance_miles": 115
         },
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 132
         }
       ]
     }
@@ -1736,7 +1961,13 @@
       "name": "Camden",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SW"
+      "postcode_areas": [
+        "NW",
+        "N",
+        "WC"
+      ],
+      "lat": 51.5517,
+      "lon": -0.1588
     },
     "architecture_context": {
       "pain_points": [
@@ -1767,16 +1998,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 2
         },
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 3
         },
         {
           "id": "kensington-and-chelsea",
-          "name": "Kensington and Chelsea"
+          "name": "Kensington and Chelsea",
+          "distance_miles": 4
         }
       ]
     }
@@ -1793,7 +2027,11 @@
       "name": "Greenwich",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "SE"
+      ],
+      "lat": 51.4892,
+      "lon": 0.0648
     },
     "architecture_context": {
       "pain_points": [
@@ -1824,16 +2062,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "westminster",
-          "name": "Westminster"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 5
         },
         {
-          "id": "lambeth",
-          "name": "Lambeth"
+          "id": "southwark",
+          "name": "Southwark",
+          "distance_miles": 6
         },
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 6
         }
       ]
     }
@@ -1850,7 +2091,12 @@
       "name": "Hackney",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "E",
+        "N"
+      ],
+      "lat": 51.545,
+      "lon": -0.0553
     },
     "architecture_context": {
       "pain_points": [
@@ -1881,16 +2127,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 2
+        },
+        {
           "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "name": "Tower Hamlets",
+          "distance_miles": 2
         },
         {
-          "id": "southwark",
-          "name": "Southwark"
-        },
-        {
-          "id": "greenwich",
-          "name": "Greenwich"
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 4
         }
       ]
     }
@@ -1907,7 +2156,12 @@
       "name": "Hammersmith and Fulham",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "WC"
+      "postcode_areas": [
+        "W",
+        "SW"
+      ],
+      "lat": 51.4927,
+      "lon": -0.2339
     },
     "architecture_context": {
       "pain_points": [
@@ -1938,16 +2192,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "barnet",
-          "name": "Barnet"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 2
         },
         {
-          "id": "southwark",
-          "name": "Southwark"
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
         },
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "ealing",
+          "name": "Ealing",
+          "distance_miles": 4
         }
       ]
     }
@@ -1964,7 +2221,12 @@
       "name": "Islington",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "N",
+        "EC"
+      ],
+      "lat": 51.5465,
+      "lon": -0.1058
     },
     "architecture_context": {
       "pain_points": [
@@ -1995,16 +2257,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "ealing",
-          "name": "Ealing"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 2
         },
         {
           "id": "camden",
-          "name": "Camden"
+          "name": "Camden",
+          "distance_miles": 2
         },
         {
-          "id": "barnet",
-          "name": "Barnet"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 3
         }
       ]
     }
@@ -2021,7 +2286,12 @@
       "name": "Kensington and Chelsea",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "SW",
+        "W"
+      ],
+      "lat": 51.4991,
+      "lon": -0.1938
     },
     "architecture_context": {
       "pain_points": [
@@ -2052,16 +2322,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "westminster",
-          "name": "Westminster"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 2
         },
         {
-          "id": "islington",
-          "name": "Islington"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 2
         },
         {
           "id": "wandsworth",
-          "name": "Wandsworth"
+          "name": "Wandsworth",
+          "distance_miles": 3
         }
       ]
     }
@@ -2078,7 +2351,12 @@
       "name": "Lambeth",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "NW"
+      "postcode_areas": [
+        "SE",
+        "SW"
+      ],
+      "lat": 51.4571,
+      "lon": -0.1231
     },
     "architecture_context": {
       "pain_points": [
@@ -2109,16 +2387,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "id": "southwark",
+          "name": "Southwark",
+          "distance_miles": 2
         },
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
         },
         {
-          "id": "barnet",
-          "name": "Barnet"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 4
         }
       ]
     }
@@ -2135,7 +2416,11 @@
       "name": "Southwark",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "SE"
+      ],
+      "lat": 51.4734,
+      "lon": -0.0755
     },
     "architecture_context": {
       "pain_points": [
@@ -2166,16 +2451,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "kensington-and-chelsea",
-          "name": "Kensington and Chelsea"
+          "id": "lambeth",
+          "name": "Lambeth",
+          "distance_miles": 2
         },
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 3
         },
         {
-          "id": "ealing",
-          "name": "Ealing"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 4
         }
       ]
     }
@@ -2192,7 +2480,11 @@
       "name": "Tower Hamlets",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "W"
+      "postcode_areas": [
+        "E"
+      ],
+      "lat": 51.515,
+      "lon": -0.035
     },
     "architecture_context": {
       "pain_points": [
@@ -2223,16 +2515,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 2
         },
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "southwark",
+          "name": "Southwark",
+          "distance_miles": 3
         },
         {
-          "id": "kensington-and-chelsea",
-          "name": "Kensington and Chelsea"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 4
         }
       ]
     }
@@ -2249,7 +2544,11 @@
       "name": "Wandsworth",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "SW"
+      ],
+      "lat": 51.4567,
+      "lon": -0.191
     },
     "architecture_context": {
       "pain_points": [
@@ -2280,16 +2579,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hackney",
-          "name": "Hackney"
+          "id": "lambeth",
+          "name": "Lambeth",
+          "distance_miles": 3
         },
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 3
         },
         {
-          "id": "barnet",
-          "name": "Barnet"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 3
         }
       ]
     }
@@ -2306,7 +2608,14 @@
       "name": "Westminster",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "W",
+        "SW",
+        "WC",
+        "NW"
+      ],
+      "lat": 51.512,
+      "lon": -0.15
     },
     "architecture_context": {
       "pain_points": [
@@ -2337,16 +2646,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hackney",
-          "name": "Hackney"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 2
         },
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 3
         },
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 3
         }
       ]
     }
@@ -2363,7 +2675,12 @@
       "name": "Richmond upon Thames",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "TW",
+        "SW"
+      ],
+      "lat": 51.4479,
+      "lon": -0.326
     },
     "architecture_context": {
       "pain_points": [
@@ -2394,16 +2711,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "kensington-and-chelsea",
-          "name": "Kensington and Chelsea"
+          "id": "hounslow",
+          "name": "Hounslow",
+          "distance_miles": 2
         },
         {
-          "id": "southwark",
-          "name": "Southwark"
+          "id": "ealing",
+          "name": "Ealing",
+          "distance_miles": 5
         },
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 5
         }
       ]
     }
@@ -2420,7 +2740,12 @@
       "name": "Ealing",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "E"
+      "postcode_areas": [
+        "W",
+        "UB"
+      ],
+      "lat": 51.513,
+      "lon": -0.3089
     },
     "architecture_context": {
       "pain_points": [
@@ -2451,16 +2776,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "camden",
-          "name": "Camden"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 4
+        },
+        {
+          "id": "hounslow",
+          "name": "Hounslow",
+          "distance_miles": 5
         },
         {
           "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
-        },
-        {
-          "id": "westminster",
-          "name": "Westminster"
+          "name": "Richmond upon Thames",
+          "distance_miles": 5
         }
       ]
     }
@@ -2477,7 +2805,12 @@
       "name": "Hounslow",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "TW",
+        "W"
+      ],
+      "lat": 51.4609,
+      "lon": -0.3731
     },
     "architecture_context": {
       "pain_points": [
@@ -2508,16 +2841,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "richmond-upon-thames",
+          "name": "Richmond upon Thames",
+          "distance_miles": 2
+        },
+        {
+          "id": "ealing",
+          "name": "Ealing",
+          "distance_miles": 5
+        },
+        {
           "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
-        },
-        {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
-        },
-        {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 6
         }
       ]
     }
@@ -2534,7 +2870,13 @@
       "name": "Barnet",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "N",
+        "NW",
+        "EN"
+      ],
+      "lat": 51.6252,
+      "lon": -0.1517
     },
     "architecture_context": {
       "pain_points": [
@@ -2565,16 +2907,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "westminster",
-          "name": "Westminster"
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 5
         },
         {
           "id": "islington",
-          "name": "Islington"
+          "name": "Islington",
+          "distance_miles": 6
         },
         {
-          "id": "lambeth",
-          "name": "Lambeth"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 7
         }
       ]
     }
@@ -2591,7 +2936,11 @@
       "name": "Birmingham",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BI"
+      "postcode_areas": [
+        "B"
+      ],
+      "lat": 52.4862,
+      "lon": -1.8904
     },
     "architecture_context": {
       "pain_points": [
@@ -2622,16 +2971,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 33
+        },
+        {
           "id": "derby",
-          "name": "Derby"
+          "name": "Derby",
+          "distance_miles": 35
         },
         {
-          "id": "manchester",
-          "name": "Manchester"
-        },
-        {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 45
         }
       ]
     }
@@ -2648,7 +3000,11 @@
       "name": "Manchester",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "MA"
+      "postcode_areas": [
+        "M"
+      ],
+      "lat": 53.4808,
+      "lon": -2.2426
     },
     "architecture_context": {
       "pain_points": [
@@ -2679,16 +3035,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "nottingham",
-          "name": "Nottingham"
+          "id": "liverpool",
+          "name": "Liverpool",
+          "distance_miles": 31
         },
         {
-          "id": "cardiff",
-          "name": "Cardiff"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 33
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 36
         }
       ]
     }
@@ -2705,7 +3064,11 @@
       "name": "Glasgow",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "GL"
+      "postcode_areas": [
+        "G"
+      ],
+      "lat": 55.8642,
+      "lon": -4.2518
     },
     "architecture_context": {
       "pain_points": [
@@ -2736,16 +3099,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "edinburgh",
+          "name": "Edinburgh",
+          "distance_miles": 42
         },
         {
           "id": "newcastle",
-          "name": "Newcastle"
+          "name": "Newcastle",
+          "distance_miles": 120
         },
         {
-          "id": "southampton",
-          "name": "Southampton"
+          "id": "liverpool",
+          "name": "Liverpool",
+          "distance_miles": 177
         }
       ]
     }
@@ -2762,7 +3128,11 @@
       "name": "Liverpool",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LI"
+      "postcode_areas": [
+        "L"
+      ],
+      "lat": 53.4084,
+      "lon": -2.9916
     },
     "architecture_context": {
       "pain_points": [
@@ -2793,16 +3163,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 31
+        },
+        {
           "id": "sheffield",
-          "name": "Sheffield"
+          "name": "Sheffield",
+          "distance_miles": 63
         },
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
-        },
-        {
-          "id": "newcastle",
-          "name": "Newcastle"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 65
         }
       ]
     }
@@ -2819,7 +3192,11 @@
       "name": "Bristol",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BR"
+      "postcode_areas": [
+        "BS"
+      ],
+      "lat": 51.4545,
+      "lon": -2.5879
     },
     "architecture_context": {
       "pain_points": [
@@ -2850,16 +3227,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "leicester",
-          "name": "Leicester"
+          "id": "cardiff",
+          "name": "Cardiff",
+          "distance_miles": 26
         },
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 64
         },
         {
           "id": "birmingham",
-          "name": "Birmingham"
+          "name": "Birmingham",
+          "distance_miles": 77
         }
       ]
     }
@@ -2876,7 +3256,11 @@
       "name": "Leeds",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LE"
+      "postcode_areas": [
+        "LS"
+      ],
+      "lat": 53.8008,
+      "lon": -1.5491
     },
     "architecture_context": {
       "pain_points": [
@@ -2907,16 +3291,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 29
         },
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 36
         },
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 61
         }
       ]
     }
@@ -2933,7 +3320,11 @@
       "name": "Sheffield",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "SH"
+      "postcode_areas": [
+        "S"
+      ],
+      "lat": 53.3811,
+      "lon": -1.4701
     },
     "architecture_context": {
       "pain_points": [
@@ -2964,16 +3355,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "southampton",
-          "name": "Southampton"
-        },
-        {
           "id": "leeds",
-          "name": "Leeds"
+          "name": "Leeds",
+          "distance_miles": 29
         },
         {
           "id": "derby",
-          "name": "Derby"
+          "name": "Derby",
+          "distance_miles": 32
+        },
+        {
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 32
         }
       ]
     }
@@ -2990,7 +3384,11 @@
       "name": "Edinburgh",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "ED"
+      "postcode_areas": [
+        "EH"
+      ],
+      "lat": 55.9533,
+      "lon": -3.1883
     },
     "architecture_context": {
       "pain_points": [
@@ -3021,16 +3419,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "glasgow",
+          "name": "Glasgow",
+          "distance_miles": 42
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "newcastle",
+          "name": "Newcastle",
+          "distance_miles": 91
         },
         {
-          "id": "leicester",
-          "name": "Leicester"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 162
         }
       ]
     }
@@ -3047,7 +3448,11 @@
       "name": "Cardiff",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "CA"
+      "postcode_areas": [
+        "CF"
+      ],
+      "lat": 51.4816,
+      "lon": -3.1791
     },
     "architecture_context": {
       "pain_points": [
@@ -3078,16 +3483,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "manchester",
-          "name": "Manchester"
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 26
+        },
+        {
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 86
         },
         {
           "id": "birmingham",
-          "name": "Birmingham"
-        },
-        {
-          "id": "nottingham",
-          "name": "Nottingham"
+          "name": "Birmingham",
+          "distance_miles": 88
         }
       ]
     }
@@ -3104,7 +3512,11 @@
       "name": "Nottingham",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "NO"
+      "postcode_areas": [
+        "NG"
+      ],
+      "lat": 52.9548,
+      "lon": -1.1581
     },
     "architecture_context": {
       "pain_points": [
@@ -3135,16 +3547,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 13
         },
         {
-          "id": "leeds",
-          "name": "Leeds"
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 22
         },
         {
-          "id": "glasgow",
-          "name": "Glasgow"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 32
         }
       ]
     }
@@ -3161,7 +3576,11 @@
       "name": "Leicester",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LE"
+      "postcode_areas": [
+        "LE"
+      ],
+      "lat": 52.6369,
+      "lon": -1.1398
     },
     "architecture_context": {
       "pain_points": [
@@ -3192,16 +3611,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "southampton",
-          "name": "Southampton"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 22
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 24
         },
         {
-          "id": "sheffield",
-          "name": "Sheffield"
+          "id": "birmingham",
+          "name": "Birmingham",
+          "distance_miles": 33
         }
       ]
     }
@@ -3218,7 +3640,11 @@
       "name": "Newcastle",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "NE"
+      "postcode_areas": [
+        "NE"
+      ],
+      "lat": 54.9783,
+      "lon": -1.6178
     },
     "architecture_context": {
       "pain_points": [
@@ -3249,16 +3675,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 81
+        },
+        {
           "id": "edinburgh",
-          "name": "Edinburgh"
+          "name": "Edinburgh",
+          "distance_miles": 91
         },
         {
-          "id": "leicester",
-          "name": "Leicester"
-        },
-        {
-          "id": "glasgow",
-          "name": "Glasgow"
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 106
         }
       ]
     }
@@ -3275,7 +3704,11 @@
       "name": "Southampton",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "SO"
+      "postcode_areas": [
+        "SO"
+      ],
+      "lat": 50.9097,
+      "lon": -1.4044
     },
     "architecture_context": {
       "pain_points": [
@@ -3306,16 +3739,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "newcastle",
-          "name": "Newcastle"
-        },
-        {
           "id": "brighton",
-          "name": "Brighton"
+          "name": "Brighton",
+          "distance_miles": 56
         },
         {
-          "id": "nottingham",
-          "name": "Nottingham"
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 64
+        },
+        {
+          "id": "cardiff",
+          "name": "Cardiff",
+          "distance_miles": 86
         }
       ]
     }
@@ -3332,7 +3768,11 @@
       "name": "Derby",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "DE"
+      "postcode_areas": [
+        "DE"
+      ],
+      "lat": 52.9225,
+      "lon": -1.4746
     },
     "architecture_context": {
       "pain_points": [
@@ -3363,16 +3803,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
-        },
-        {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 13
         },
         {
           "id": "leicester",
-          "name": "Leicester"
+          "name": "Leicester",
+          "distance_miles": 24
+        },
+        {
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 32
         }
       ]
     }
@@ -3389,7 +3832,11 @@
       "name": "Brighton",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BR"
+      "postcode_areas": [
+        "BN"
+      ],
+      "lat": 50.8225,
+      "lon": -0.1372
     },
     "architecture_context": {
       "pain_points": [
@@ -3420,16 +3867,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "derby",
-          "name": "Derby"
-        },
-        {
-          "id": "newcastle",
-          "name": "Newcastle"
-        },
-        {
           "id": "southampton",
-          "name": "Southampton"
+          "name": "Southampton",
+          "distance_miles": 56
+        },
+        {
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 115
+        },
+        {
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 132
         }
       ]
     }
@@ -3446,7 +3896,13 @@
       "name": "Camden",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SW"
+      "postcode_areas": [
+        "NW",
+        "N",
+        "WC"
+      ],
+      "lat": 51.5517,
+      "lon": -0.1588
     },
     "architecture_context": {
       "pain_points": [
@@ -3477,16 +3933,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
-        },
-        {
-          "id": "hackney",
-          "name": "Hackney"
-        },
-        {
           "id": "islington",
-          "name": "Islington"
+          "name": "Islington",
+          "distance_miles": 2
+        },
+        {
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 3
+        },
+        {
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 4
         }
       ]
     }
@@ -3503,7 +3962,11 @@
       "name": "Greenwich",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "SE"
+      ],
+      "lat": 51.4892,
+      "lon": 0.0648
     },
     "architecture_context": {
       "pain_points": [
@@ -3534,16 +3997,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "camden",
-          "name": "Camden"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 5
         },
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "southwark",
+          "name": "Southwark",
+          "distance_miles": 6
         },
         {
-          "id": "barnet",
-          "name": "Barnet"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 6
         }
       ]
     }
@@ -3560,7 +4026,12 @@
       "name": "Hackney",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "E",
+        "N"
+      ],
+      "lat": 51.545,
+      "lon": -0.0553
     },
     "architecture_context": {
       "pain_points": [
@@ -3591,16 +4062,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
-        },
-        {
-          "id": "southwark",
-          "name": "Southwark"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 2
         },
         {
           "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "name": "Tower Hamlets",
+          "distance_miles": 2
+        },
+        {
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 4
         }
       ]
     }
@@ -3617,7 +4091,12 @@
       "name": "Hammersmith and Fulham",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "WC"
+      "postcode_areas": [
+        "W",
+        "SW"
+      ],
+      "lat": 51.4927,
+      "lon": -0.2339
     },
     "architecture_context": {
       "pain_points": [
@@ -3648,16 +4127,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "islington",
-          "name": "Islington"
-        },
-        {
-          "id": "lambeth",
-          "name": "Lambeth"
-        },
-        {
           "id": "kensington-and-chelsea",
-          "name": "Kensington and Chelsea"
+          "name": "Kensington and Chelsea",
+          "distance_miles": 2
+        },
+        {
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
+        },
+        {
+          "id": "ealing",
+          "name": "Ealing",
+          "distance_miles": 4
         }
       ]
     }
@@ -3674,7 +4156,12 @@
       "name": "Islington",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "N",
+        "EC"
+      ],
+      "lat": 51.5465,
+      "lon": -0.1058
     },
     "architecture_context": {
       "pain_points": [
@@ -3705,16 +4192,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "kensington-and-chelsea",
-          "name": "Kensington and Chelsea"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 2
         },
         {
-          "id": "lambeth",
-          "name": "Lambeth"
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 2
         },
         {
-          "id": "southwark",
-          "name": "Southwark"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 3
         }
       ]
     }
@@ -3731,7 +4221,12 @@
       "name": "Kensington and Chelsea",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "SW",
+        "W"
+      ],
+      "lat": 51.4991,
+      "lon": -0.1938
     },
     "architecture_context": {
       "pain_points": [
@@ -3763,15 +4258,18 @@
       "nearby_areas": [
         {
           "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 2
         },
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 2
         },
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
         }
       ]
     }
@@ -3788,7 +4286,12 @@
       "name": "Lambeth",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "NW"
+      "postcode_areas": [
+        "SE",
+        "SW"
+      ],
+      "lat": 51.4571,
+      "lon": -0.1231
     },
     "architecture_context": {
       "pain_points": [
@@ -3819,16 +4322,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "westminster",
-          "name": "Westminster"
-        },
-        {
-          "id": "barnet",
-          "name": "Barnet"
-        },
-        {
           "id": "southwark",
-          "name": "Southwark"
+          "name": "Southwark",
+          "distance_miles": 2
+        },
+        {
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
+        },
+        {
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 4
         }
       ]
     }
@@ -3845,7 +4351,11 @@
       "name": "Southwark",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "SE"
+      ],
+      "lat": 51.4734,
+      "lon": -0.0755
     },
     "architecture_context": {
       "pain_points": [
@@ -3876,16 +4386,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hounslow",
-          "name": "Hounslow"
+          "id": "lambeth",
+          "name": "Lambeth",
+          "distance_miles": 2
         },
         {
-          "id": "hackney",
-          "name": "Hackney"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 3
         },
         {
-          "id": "ealing",
-          "name": "Ealing"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 4
         }
       ]
     }
@@ -3902,7 +4415,11 @@
       "name": "Tower Hamlets",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "W"
+      "postcode_areas": [
+        "E"
+      ],
+      "lat": 51.515,
+      "lon": -0.035
     },
     "architecture_context": {
       "pain_points": [
@@ -3933,16 +4450,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "ealing",
-          "name": "Ealing"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 2
         },
         {
-          "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "id": "southwark",
+          "name": "Southwark",
+          "distance_miles": 3
         },
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 4
         }
       ]
     }
@@ -3959,7 +4479,11 @@
       "name": "Wandsworth",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "SW"
+      ],
+      "lat": 51.4567,
+      "lon": -0.191
     },
     "architecture_context": {
       "pain_points": [
@@ -3990,16 +4514,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "lambeth",
+          "name": "Lambeth",
+          "distance_miles": 3
+        },
+        {
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 3
+        },
+        {
           "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
-        },
-        {
-          "id": "greenwich",
-          "name": "Greenwich"
-        },
-        {
-          "id": "southwark",
-          "name": "Southwark"
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 3
         }
       ]
     }
@@ -4016,7 +4543,14 @@
       "name": "Westminster",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "W",
+        "SW",
+        "WC",
+        "NW"
+      ],
+      "lat": 51.512,
+      "lon": -0.15
     },
     "architecture_context": {
       "pain_points": [
@@ -4047,16 +4581,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 2
+        },
+        {
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 3
         },
         {
           "id": "islington",
-          "name": "Islington"
-        },
-        {
-          "id": "southwark",
-          "name": "Southwark"
+          "name": "Islington",
+          "distance_miles": 3
         }
       ]
     }
@@ -4073,7 +4610,12 @@
       "name": "Richmond upon Thames",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "TW",
+        "SW"
+      ],
+      "lat": 51.4479,
+      "lon": -0.326
     },
     "architecture_context": {
       "pain_points": [
@@ -4104,16 +4646,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "hounslow",
+          "name": "Hounslow",
+          "distance_miles": 2
+        },
+        {
           "id": "ealing",
-          "name": "Ealing"
+          "name": "Ealing",
+          "distance_miles": 5
         },
         {
-          "id": "camden",
-          "name": "Camden"
-        },
-        {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 5
         }
       ]
     }
@@ -4130,7 +4675,12 @@
       "name": "Ealing",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "E"
+      "postcode_areas": [
+        "W",
+        "UB"
+      ],
+      "lat": 51.513,
+      "lon": -0.3089
     },
     "architecture_context": {
       "pain_points": [
@@ -4162,15 +4712,18 @@
       "nearby_areas": [
         {
           "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 4
         },
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "hounslow",
+          "name": "Hounslow",
+          "distance_miles": 5
         },
         {
           "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "name": "Richmond upon Thames",
+          "distance_miles": 5
         }
       ]
     }
@@ -4187,7 +4740,12 @@
       "name": "Hounslow",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "TW",
+        "W"
+      ],
+      "lat": 51.4609,
+      "lon": -0.3731
     },
     "architecture_context": {
       "pain_points": [
@@ -4218,16 +4776,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "richmond-upon-thames",
+          "name": "Richmond upon Thames",
+          "distance_miles": 2
         },
         {
-          "id": "islington",
-          "name": "Islington"
+          "id": "ealing",
+          "name": "Ealing",
+          "distance_miles": 5
         },
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 6
         }
       ]
     }
@@ -4244,7 +4805,13 @@
       "name": "Barnet",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "N",
+        "NW",
+        "EN"
+      ],
+      "lat": 51.6252,
+      "lon": -0.1517
     },
     "architecture_context": {
       "pain_points": [
@@ -4275,16 +4842,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hounslow",
-          "name": "Hounslow"
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 5
         },
         {
-          "id": "westminster",
-          "name": "Westminster"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 6
         },
         {
           "id": "hackney",
-          "name": "Hackney"
+          "name": "Hackney",
+          "distance_miles": 7
         }
       ]
     }
@@ -4301,7 +4871,11 @@
       "name": "Birmingham",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BI"
+      "postcode_areas": [
+        "B"
+      ],
+      "lat": 52.4862,
+      "lon": -1.8904
     },
     "architecture_context": {
       "pain_points": [
@@ -4332,16 +4906,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "southampton",
-          "name": "Southampton"
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 33
         },
         {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 35
         },
         {
-          "id": "newcastle",
-          "name": "Newcastle"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 45
         }
       ]
     }
@@ -4358,7 +4935,11 @@
       "name": "Manchester",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "MA"
+      "postcode_areas": [
+        "M"
+      ],
+      "lat": 53.4808,
+      "lon": -2.2426
     },
     "architecture_context": {
       "pain_points": [
@@ -4389,16 +4970,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "liverpool",
+          "name": "Liverpool",
+          "distance_miles": 31
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 33
         },
         {
-          "id": "glasgow",
-          "name": "Glasgow"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 36
         }
       ]
     }
@@ -4415,7 +4999,11 @@
       "name": "Glasgow",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "GL"
+      "postcode_areas": [
+        "G"
+      ],
+      "lat": 55.8642,
+      "lon": -4.2518
     },
     "architecture_context": {
       "pain_points": [
@@ -4447,15 +5035,18 @@
       "nearby_areas": [
         {
           "id": "edinburgh",
-          "name": "Edinburgh"
+          "name": "Edinburgh",
+          "distance_miles": 42
         },
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "newcastle",
+          "name": "Newcastle",
+          "distance_miles": 120
         },
         {
-          "id": "manchester",
-          "name": "Manchester"
+          "id": "liverpool",
+          "name": "Liverpool",
+          "distance_miles": 177
         }
       ]
     }
@@ -4472,7 +5063,11 @@
       "name": "Liverpool",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LI"
+      "postcode_areas": [
+        "L"
+      ],
+      "lat": 53.4084,
+      "lon": -2.9916
     },
     "architecture_context": {
       "pain_points": [
@@ -4503,16 +5098,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "leicester",
-          "name": "Leicester"
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 31
         },
         {
           "id": "sheffield",
-          "name": "Sheffield"
+          "name": "Sheffield",
+          "distance_miles": 63
         },
         {
-          "id": "birmingham",
-          "name": "Birmingham"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 65
         }
       ]
     }
@@ -4529,7 +5127,11 @@
       "name": "Bristol",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BR"
+      "postcode_areas": [
+        "BS"
+      ],
+      "lat": 51.4545,
+      "lon": -2.5879
     },
     "architecture_context": {
       "pain_points": [
@@ -4560,16 +5162,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "leeds",
-          "name": "Leeds"
+          "id": "cardiff",
+          "name": "Cardiff",
+          "distance_miles": 26
         },
         {
-          "id": "nottingham",
-          "name": "Nottingham"
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 64
         },
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "birmingham",
+          "name": "Birmingham",
+          "distance_miles": 77
         }
       ]
     }
@@ -4586,7 +5191,11 @@
       "name": "Leeds",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LE"
+      "postcode_areas": [
+        "LS"
+      ],
+      "lat": 53.8008,
+      "lon": -1.5491
     },
     "architecture_context": {
       "pain_points": [
@@ -4617,16 +5226,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "nottingham",
-          "name": "Nottingham"
-        },
-        {
-          "id": "brighton",
-          "name": "Brighton"
-        },
-        {
           "id": "sheffield",
-          "name": "Sheffield"
+          "name": "Sheffield",
+          "distance_miles": 29
+        },
+        {
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 36
+        },
+        {
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 61
         }
       ]
     }
@@ -4643,7 +5255,11 @@
       "name": "Sheffield",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "SH"
+      "postcode_areas": [
+        "S"
+      ],
+      "lat": 53.3811,
+      "lon": -1.4701
     },
     "architecture_context": {
       "pain_points": [
@@ -4674,16 +5290,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "liverpool",
-          "name": "Liverpool"
-        },
-        {
           "id": "leeds",
-          "name": "Leeds"
+          "name": "Leeds",
+          "distance_miles": 29
         },
         {
-          "id": "manchester",
-          "name": "Manchester"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 32
+        },
+        {
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 32
         }
       ]
     }
@@ -4700,7 +5319,11 @@
       "name": "Edinburgh",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "ED"
+      "postcode_areas": [
+        "EH"
+      ],
+      "lat": 55.9533,
+      "lon": -3.1883
     },
     "architecture_context": {
       "pain_points": [
@@ -4731,16 +5354,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "liverpool",
-          "name": "Liverpool"
-        },
-        {
           "id": "glasgow",
-          "name": "Glasgow"
+          "name": "Glasgow",
+          "distance_miles": 42
         },
         {
-          "id": "nottingham",
-          "name": "Nottingham"
+          "id": "newcastle",
+          "name": "Newcastle",
+          "distance_miles": 91
+        },
+        {
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 162
         }
       ]
     }
@@ -4757,7 +5383,11 @@
       "name": "Cardiff",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "CA"
+      "postcode_areas": [
+        "CF"
+      ],
+      "lat": 51.4816,
+      "lon": -3.1791
     },
     "architecture_context": {
       "pain_points": [
@@ -4788,16 +5418,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 26
         },
         {
-          "id": "manchester",
-          "name": "Manchester"
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 86
         },
         {
-          "id": "leeds",
-          "name": "Leeds"
+          "id": "birmingham",
+          "name": "Birmingham",
+          "distance_miles": 88
         }
       ]
     }
@@ -4814,7 +5447,11 @@
       "name": "Nottingham",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "NO"
+      "postcode_areas": [
+        "NG"
+      ],
+      "lat": 52.9548,
+      "lon": -1.1581
     },
     "architecture_context": {
       "pain_points": [
@@ -4845,16 +5482,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 13
         },
         {
           "id": "leicester",
-          "name": "Leicester"
+          "name": "Leicester",
+          "distance_miles": 22
         },
         {
-          "id": "leeds",
-          "name": "Leeds"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 32
         }
       ]
     }
@@ -4871,7 +5511,11 @@
       "name": "Leicester",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LE"
+      "postcode_areas": [
+        "LE"
+      ],
+      "lat": 52.6369,
+      "lon": -1.1398
     },
     "architecture_context": {
       "pain_points": [
@@ -4902,16 +5546,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 22
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 24
         },
         {
-          "id": "manchester",
-          "name": "Manchester"
+          "id": "birmingham",
+          "name": "Birmingham",
+          "distance_miles": 33
         }
       ]
     }
@@ -4928,7 +5575,11 @@
       "name": "Newcastle",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "NE"
+      "postcode_areas": [
+        "NE"
+      ],
+      "lat": 54.9783,
+      "lon": -1.6178
     },
     "architecture_context": {
       "pain_points": [
@@ -4959,16 +5610,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 81
         },
         {
-          "id": "sheffield",
-          "name": "Sheffield"
+          "id": "edinburgh",
+          "name": "Edinburgh",
+          "distance_miles": 91
         },
         {
           "id": "manchester",
-          "name": "Manchester"
+          "name": "Manchester",
+          "distance_miles": 106
         }
       ]
     }
@@ -4985,7 +5639,11 @@
       "name": "Southampton",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "SO"
+      "postcode_areas": [
+        "SO"
+      ],
+      "lat": 50.9097,
+      "lon": -1.4044
     },
     "architecture_context": {
       "pain_points": [
@@ -5016,16 +5674,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "birmingham",
-          "name": "Birmingham"
+          "id": "brighton",
+          "name": "Brighton",
+          "distance_miles": 56
         },
         {
-          "id": "nottingham",
-          "name": "Nottingham"
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 64
         },
         {
           "id": "cardiff",
-          "name": "Cardiff"
+          "name": "Cardiff",
+          "distance_miles": 86
         }
       ]
     }
@@ -5042,7 +5703,11 @@
       "name": "Derby",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "DE"
+      "postcode_areas": [
+        "DE"
+      ],
+      "lat": 52.9225,
+      "lon": -1.4746
     },
     "architecture_context": {
       "pain_points": [
@@ -5073,16 +5738,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 13
+        },
+        {
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 24
+        },
+        {
           "id": "sheffield",
-          "name": "Sheffield"
-        },
-        {
-          "id": "newcastle",
-          "name": "Newcastle"
-        },
-        {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "name": "Sheffield",
+          "distance_miles": 32
         }
       ]
     }
@@ -5099,7 +5767,11 @@
       "name": "Brighton",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BR"
+      "postcode_areas": [
+        "BN"
+      ],
+      "lat": 50.8225,
+      "lon": -0.1372
     },
     "architecture_context": {
       "pain_points": [
@@ -5130,16 +5802,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "glasgow",
-          "name": "Glasgow"
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 56
         },
         {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 115
         },
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 132
         }
       ]
     }
@@ -5156,7 +5831,13 @@
       "name": "Camden",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SW"
+      "postcode_areas": [
+        "NW",
+        "N",
+        "WC"
+      ],
+      "lat": 51.5517,
+      "lon": -0.1588
     },
     "architecture_context": {
       "pain_points": [
@@ -5187,16 +5868,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "ealing",
-          "name": "Ealing"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 2
         },
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 3
         },
         {
-          "id": "lambeth",
-          "name": "Lambeth"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 4
         }
       ]
     }
@@ -5213,7 +5897,11 @@
       "name": "Greenwich",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "SE"
+      ],
+      "lat": 51.4892,
+      "lon": 0.0648
     },
     "architecture_context": {
       "pain_points": [
@@ -5244,16 +5932,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 5
+        },
+        {
+          "id": "southwark",
+          "name": "Southwark",
+          "distance_miles": 6
         },
         {
           "id": "hackney",
-          "name": "Hackney"
-        },
-        {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "name": "Hackney",
+          "distance_miles": 6
         }
       ]
     }
@@ -5270,7 +5961,12 @@
       "name": "Hackney",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "E",
+        "N"
+      ],
+      "lat": 51.545,
+      "lon": -0.0553
     },
     "architecture_context": {
       "pain_points": [
@@ -5301,16 +5997,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "westminster",
-          "name": "Westminster"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 2
         },
         {
-          "id": "ealing",
-          "name": "Ealing"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 2
         },
         {
-          "id": "lambeth",
-          "name": "Lambeth"
+          "id": "camden",
+          "name": "Camden",
+          "distance_miles": 4
         }
       ]
     }
@@ -5327,7 +6026,12 @@
       "name": "Hammersmith and Fulham",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "WC"
+      "postcode_areas": [
+        "W",
+        "SW"
+      ],
+      "lat": 51.4927,
+      "lon": -0.2339
     },
     "architecture_context": {
       "pain_points": [
@@ -5358,16 +6062,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 2
+        },
+        {
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
+        },
+        {
           "id": "ealing",
-          "name": "Ealing"
-        },
-        {
-          "id": "islington",
-          "name": "Islington"
-        },
-        {
-          "id": "hounslow",
-          "name": "Hounslow"
+          "name": "Ealing",
+          "distance_miles": 4
         }
       ]
     }
@@ -5384,7 +6091,12 @@
       "name": "Islington",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "N",
+        "EC"
+      ],
+      "lat": 51.5465,
+      "lon": -0.1058
     },
     "architecture_context": {
       "pain_points": [
@@ -5415,16 +6127,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 2
         },
         {
           "id": "camden",
-          "name": "Camden"
+          "name": "Camden",
+          "distance_miles": 2
         },
         {
-          "id": "wandsworth",
-          "name": "Wandsworth"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 3
         }
       ]
     }
@@ -5441,7 +6156,12 @@
       "name": "Kensington and Chelsea",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "SW",
+        "W"
+      ],
+      "lat": 51.4991,
+      "lon": -0.1938
     },
     "architecture_context": {
       "pain_points": [
@@ -5472,16 +6192,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "greenwich",
-          "name": "Greenwich"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 2
         },
         {
-          "id": "hounslow",
-          "name": "Hounslow"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 2
         },
         {
-          "id": "barnet",
-          "name": "Barnet"
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
         }
       ]
     }
@@ -5498,7 +6221,12 @@
       "name": "Lambeth",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "NW"
+      "postcode_areas": [
+        "SE",
+        "SW"
+      ],
+      "lat": 51.4571,
+      "lon": -0.1231
     },
     "architecture_context": {
       "pain_points": [
@@ -5529,16 +6257,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hackney",
-          "name": "Hackney"
-        },
-        {
           "id": "southwark",
-          "name": "Southwark"
+          "name": "Southwark",
+          "distance_miles": 2
         },
         {
-          "id": "camden",
-          "name": "Camden"
+          "id": "wandsworth",
+          "name": "Wandsworth",
+          "distance_miles": 3
+        },
+        {
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 4
         }
       ]
     }
@@ -5555,7 +6286,11 @@
       "name": "Southwark",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "SE"
+      ],
+      "lat": 51.4734,
+      "lon": -0.0755
     },
     "architecture_context": {
       "pain_points": [
@@ -5587,15 +6322,18 @@
       "nearby_areas": [
         {
           "id": "lambeth",
-          "name": "Lambeth"
+          "name": "Lambeth",
+          "distance_miles": 2
         },
         {
-          "id": "greenwich",
-          "name": "Greenwich"
+          "id": "tower-hamlets",
+          "name": "Tower Hamlets",
+          "distance_miles": 3
         },
         {
-          "id": "islington",
-          "name": "Islington"
+          "id": "westminster",
+          "name": "Westminster",
+          "distance_miles": 4
         }
       ]
     }
@@ -5612,7 +6350,11 @@
       "name": "Tower Hamlets",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "W"
+      "postcode_areas": [
+        "E"
+      ],
+      "lat": 51.515,
+      "lon": -0.035
     },
     "architecture_context": {
       "pain_points": [
@@ -5643,16 +6385,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "lambeth",
-          "name": "Lambeth"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 2
         },
         {
-          "id": "westminster",
-          "name": "Westminster"
+          "id": "southwark",
+          "name": "Southwark",
+          "distance_miles": 3
         },
         {
-          "id": "greenwich",
-          "name": "Greenwich"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 4
         }
       ]
     }
@@ -5669,7 +6414,11 @@
       "name": "Wandsworth",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "SW"
+      ],
+      "lat": 51.4567,
+      "lon": -0.191
     },
     "architecture_context": {
       "pain_points": [
@@ -5700,16 +6449,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hackney",
-          "name": "Hackney"
+          "id": "lambeth",
+          "name": "Lambeth",
+          "distance_miles": 3
         },
         {
-          "id": "tower-hamlets",
-          "name": "Tower Hamlets"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 3
         },
         {
-          "id": "islington",
-          "name": "Islington"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 3
         }
       ]
     }
@@ -5726,7 +6478,14 @@
       "name": "Westminster",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "W",
+        "SW",
+        "WC",
+        "NW"
+      ],
+      "lat": 51.512,
+      "lon": -0.15
     },
     "architecture_context": {
       "pain_points": [
@@ -5757,16 +6516,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hounslow",
-          "name": "Hounslow"
-        },
-        {
-          "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "id": "kensington-and-chelsea",
+          "name": "Kensington and Chelsea",
+          "distance_miles": 2
         },
         {
           "id": "camden",
-          "name": "Camden"
+          "name": "Camden",
+          "distance_miles": 3
+        },
+        {
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 3
         }
       ]
     }
@@ -5783,7 +6545,12 @@
       "name": "Richmond upon Thames",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "N"
+      "postcode_areas": [
+        "TW",
+        "SW"
+      ],
+      "lat": 51.4479,
+      "lon": -0.326
     },
     "architecture_context": {
       "pain_points": [
@@ -5814,16 +6581,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "westminster",
-          "name": "Westminster"
+          "id": "hounslow",
+          "name": "Hounslow",
+          "distance_miles": 2
         },
         {
-          "id": "hackney",
-          "name": "Hackney"
+          "id": "ealing",
+          "name": "Ealing",
+          "distance_miles": 5
         },
         {
-          "id": "southwark",
-          "name": "Southwark"
+          "id": "hammersmith-and-fulham",
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 5
         }
       ]
     }
@@ -5840,7 +6610,12 @@
       "name": "Ealing",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "E"
+      "postcode_areas": [
+        "W",
+        "UB"
+      ],
+      "lat": 51.513,
+      "lon": -0.3089
     },
     "architecture_context": {
       "pain_points": [
@@ -5872,15 +6647,18 @@
       "nearby_areas": [
         {
           "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 4
         },
         {
-          "id": "barnet",
-          "name": "Barnet"
+          "id": "hounslow",
+          "name": "Hounslow",
+          "distance_miles": 5
         },
         {
           "id": "richmond-upon-thames",
-          "name": "Richmond upon Thames"
+          "name": "Richmond upon Thames",
+          "distance_miles": 5
         }
       ]
     }
@@ -5897,7 +6675,12 @@
       "name": "Hounslow",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "EC"
+      "postcode_areas": [
+        "TW",
+        "W"
+      ],
+      "lat": 51.4609,
+      "lon": -0.3731
     },
     "architecture_context": {
       "pain_points": [
@@ -5928,16 +6711,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "hackney",
-          "name": "Hackney"
+          "id": "richmond-upon-thames",
+          "name": "Richmond upon Thames",
+          "distance_miles": 2
+        },
+        {
+          "id": "ealing",
+          "name": "Ealing",
+          "distance_miles": 5
         },
         {
           "id": "hammersmith-and-fulham",
-          "name": "Hammersmith and Fulham"
-        },
-        {
-          "id": "westminster",
-          "name": "Westminster"
+          "name": "Hammersmith and Fulham",
+          "distance_miles": 6
         }
       ]
     }
@@ -5954,7 +6740,13 @@
       "name": "Barnet",
       "region": "London",
       "is_london": true,
-      "postcode_prefix": "SE"
+      "postcode_areas": [
+        "N",
+        "NW",
+        "EN"
+      ],
+      "lat": 51.6252,
+      "lon": -0.1517
     },
     "architecture_context": {
       "pain_points": [
@@ -5986,15 +6778,18 @@
       "nearby_areas": [
         {
           "id": "camden",
-          "name": "Camden"
+          "name": "Camden",
+          "distance_miles": 5
         },
         {
-          "id": "ealing",
-          "name": "Ealing"
+          "id": "islington",
+          "name": "Islington",
+          "distance_miles": 6
         },
         {
-          "id": "westminster",
-          "name": "Westminster"
+          "id": "hackney",
+          "name": "Hackney",
+          "distance_miles": 7
         }
       ]
     }
@@ -6011,7 +6806,11 @@
       "name": "Birmingham",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BI"
+      "postcode_areas": [
+        "B"
+      ],
+      "lat": 52.4862,
+      "lon": -1.8904
     },
     "architecture_context": {
       "pain_points": [
@@ -6042,16 +6841,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 33
+        },
+        {
           "id": "derby",
-          "name": "Derby"
+          "name": "Derby",
+          "distance_miles": 35
         },
         {
-          "id": "leeds",
-          "name": "Leeds"
-        },
-        {
-          "id": "brighton",
-          "name": "Brighton"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 45
         }
       ]
     }
@@ -6068,7 +6870,11 @@
       "name": "Manchester",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "MA"
+      "postcode_areas": [
+        "M"
+      ],
+      "lat": 53.4808,
+      "lon": -2.2426
     },
     "architecture_context": {
       "pain_points": [
@@ -6099,16 +6905,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "cardiff",
-          "name": "Cardiff"
+          "id": "liverpool",
+          "name": "Liverpool",
+          "distance_miles": 31
         },
         {
-          "id": "birmingham",
-          "name": "Birmingham"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 33
         },
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 36
         }
       ]
     }
@@ -6125,7 +6934,11 @@
       "name": "Glasgow",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "GL"
+      "postcode_areas": [
+        "G"
+      ],
+      "lat": 55.8642,
+      "lon": -4.2518
     },
     "architecture_context": {
       "pain_points": [
@@ -6156,16 +6969,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "cardiff",
-          "name": "Cardiff"
+          "id": "edinburgh",
+          "name": "Edinburgh",
+          "distance_miles": 42
         },
         {
-          "id": "southampton",
-          "name": "Southampton"
+          "id": "newcastle",
+          "name": "Newcastle",
+          "distance_miles": 120
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "liverpool",
+          "name": "Liverpool",
+          "distance_miles": 177
         }
       ]
     }
@@ -6182,7 +6998,11 @@
       "name": "Liverpool",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LI"
+      "postcode_areas": [
+        "L"
+      ],
+      "lat": 53.4084,
+      "lon": -2.9916
     },
     "architecture_context": {
       "pain_points": [
@@ -6213,16 +7033,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "cardiff",
-          "name": "Cardiff"
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 31
         },
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 63
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 65
         }
       ]
     }
@@ -6239,7 +7062,11 @@
       "name": "Bristol",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BR"
+      "postcode_areas": [
+        "BS"
+      ],
+      "lat": 51.4545,
+      "lon": -2.5879
     },
     "architecture_context": {
       "pain_points": [
@@ -6270,16 +7097,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "nottingham",
-          "name": "Nottingham"
-        },
-        {
           "id": "cardiff",
-          "name": "Cardiff"
+          "name": "Cardiff",
+          "distance_miles": 26
         },
         {
-          "id": "manchester",
-          "name": "Manchester"
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 64
+        },
+        {
+          "id": "birmingham",
+          "name": "Birmingham",
+          "distance_miles": 77
         }
       ]
     }
@@ -6296,7 +7126,11 @@
       "name": "Leeds",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LE"
+      "postcode_areas": [
+        "LS"
+      ],
+      "lat": 53.8008,
+      "lon": -1.5491
     },
     "architecture_context": {
       "pain_points": [
@@ -6327,16 +7161,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "derby",
-          "name": "Derby"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 29
         },
         {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 36
         },
         {
-          "id": "brighton",
-          "name": "Brighton"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 61
         }
       ]
     }
@@ -6353,7 +7190,11 @@
       "name": "Sheffield",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "SH"
+      "postcode_areas": [
+        "S"
+      ],
+      "lat": 53.3811,
+      "lon": -1.4701
     },
     "architecture_context": {
       "pain_points": [
@@ -6384,16 +7225,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "manchester",
-          "name": "Manchester"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 29
         },
         {
-          "id": "glasgow",
-          "name": "Glasgow"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 32
         },
         {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 32
         }
       ]
     }
@@ -6410,7 +7254,11 @@
       "name": "Edinburgh",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "ED"
+      "postcode_areas": [
+        "EH"
+      ],
+      "lat": 55.9533,
+      "lon": -3.1883
     },
     "architecture_context": {
       "pain_points": [
@@ -6441,16 +7289,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "cardiff",
-          "name": "Cardiff"
+          "id": "glasgow",
+          "name": "Glasgow",
+          "distance_miles": 42
         },
         {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "newcastle",
+          "name": "Newcastle",
+          "distance_miles": 91
         },
         {
-          "id": "bristol",
-          "name": "Bristol"
+          "id": "leeds",
+          "name": "Leeds",
+          "distance_miles": 162
         }
       ]
     }
@@ -6467,7 +7318,11 @@
       "name": "Cardiff",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "CA"
+      "postcode_areas": [
+        "CF"
+      ],
+      "lat": 51.4816,
+      "lon": -3.1791
     },
     "architecture_context": {
       "pain_points": [
@@ -6498,16 +7353,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 26
+        },
+        {
           "id": "southampton",
-          "name": "Southampton"
+          "name": "Southampton",
+          "distance_miles": 86
         },
         {
-          "id": "sheffield",
-          "name": "Sheffield"
-        },
-        {
-          "id": "nottingham",
-          "name": "Nottingham"
+          "id": "birmingham",
+          "name": "Birmingham",
+          "distance_miles": 88
         }
       ]
     }
@@ -6524,7 +7382,11 @@
       "name": "Nottingham",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "NO"
+      "postcode_areas": [
+        "NG"
+      ],
+      "lat": 52.9548,
+      "lon": -1.1581
     },
     "architecture_context": {
       "pain_points": [
@@ -6555,16 +7417,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "glasgow",
-          "name": "Glasgow"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 13
         },
         {
-          "id": "newcastle",
-          "name": "Newcastle"
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 22
         },
         {
-          "id": "liverpool",
-          "name": "Liverpool"
+          "id": "sheffield",
+          "name": "Sheffield",
+          "distance_miles": 32
         }
       ]
     }
@@ -6581,7 +7446,11 @@
       "name": "Leicester",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "LE"
+      "postcode_areas": [
+        "LE"
+      ],
+      "lat": 52.6369,
+      "lon": -1.1398
     },
     "architecture_context": {
       "pain_points": [
@@ -6612,16 +7481,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "southampton",
-          "name": "Southampton"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 22
         },
         {
-          "id": "newcastle",
-          "name": "Newcastle"
+          "id": "derby",
+          "name": "Derby",
+          "distance_miles": 24
         },
         {
-          "id": "sheffield",
-          "name": "Sheffield"
+          "id": "birmingham",
+          "name": "Birmingham",
+          "distance_miles": 33
         }
       ]
     }
@@ -6638,7 +7510,11 @@
       "name": "Newcastle",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "NE"
+      "postcode_areas": [
+        "NE"
+      ],
+      "lat": 54.9783,
+      "lon": -1.6178
     },
     "architecture_context": {
       "pain_points": [
@@ -6669,16 +7545,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "leicester",
-          "name": "Leicester"
-        },
-        {
-          "id": "cardiff",
-          "name": "Cardiff"
-        },
-        {
           "id": "leeds",
-          "name": "Leeds"
+          "name": "Leeds",
+          "distance_miles": 81
+        },
+        {
+          "id": "edinburgh",
+          "name": "Edinburgh",
+          "distance_miles": 91
+        },
+        {
+          "id": "manchester",
+          "name": "Manchester",
+          "distance_miles": 106
         }
       ]
     }
@@ -6695,7 +7574,11 @@
       "name": "Southampton",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "SO"
+      "postcode_areas": [
+        "SO"
+      ],
+      "lat": 50.9097,
+      "lon": -1.4044
     },
     "architecture_context": {
       "pain_points": [
@@ -6726,16 +7609,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "birmingham",
-          "name": "Birmingham"
+          "id": "brighton",
+          "name": "Brighton",
+          "distance_miles": 56
         },
         {
-          "id": "leicester",
-          "name": "Leicester"
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 64
         },
         {
-          "id": "edinburgh",
-          "name": "Edinburgh"
+          "id": "cardiff",
+          "name": "Cardiff",
+          "distance_miles": 86
         }
       ]
     }
@@ -6752,7 +7638,11 @@
       "name": "Derby",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "DE"
+      "postcode_areas": [
+        "DE"
+      ],
+      "lat": 52.9225,
+      "lon": -1.4746
     },
     "architecture_context": {
       "pain_points": [
@@ -6783,16 +7673,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "leeds",
-          "name": "Leeds"
+          "id": "nottingham",
+          "name": "Nottingham",
+          "distance_miles": 13
         },
         {
-          "id": "brighton",
-          "name": "Brighton"
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 24
         },
         {
           "id": "sheffield",
-          "name": "Sheffield"
+          "name": "Sheffield",
+          "distance_miles": 32
         }
       ]
     }
@@ -6809,7 +7702,11 @@
       "name": "Brighton",
       "region": "UK",
       "is_london": false,
-      "postcode_prefix": "BR"
+      "postcode_areas": [
+        "BN"
+      ],
+      "lat": 50.8225,
+      "lon": -0.1372
     },
     "architecture_context": {
       "pain_points": [
@@ -6840,16 +7737,19 @@
     "proximity_context": {
       "nearby_areas": [
         {
-          "id": "leeds",
-          "name": "Leeds"
+          "id": "southampton",
+          "name": "Southampton",
+          "distance_miles": 56
         },
         {
-          "id": "manchester",
-          "name": "Manchester"
+          "id": "bristol",
+          "name": "Bristol",
+          "distance_miles": 115
         },
         {
-          "id": "cardiff",
-          "name": "Cardiff"
+          "id": "leicester",
+          "name": "Leicester",
+          "distance_miles": 132
         }
       ]
     }

@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SERVICES } from '../data/site';
+---
+<Layout title="Page Not Found | ApprovedDecorators" description="The page you were looking for could not be found." noindex>
+  <div class="max-w-3xl mx-auto px-4 py-20 text-center">
+    <p class="text-sm font-semibold text-blue-600 mb-2">404</p>
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Page not found</h1>
+    <p class="text-gray-600 mb-8">The page you requested does not exist or has moved. Try one of our services or the list of areas we cover.</p>
+    <ul class="flex flex-wrap justify-center gap-2 mb-8">
+      {SERVICES.map((service) => (
+        <li><a href={`/${service.id}`} class="inline-block bg-white border border-gray-300 hover:border-blue-500 hover:text-blue-700 rounded-md px-3 py-1.5 text-sm">{service.name}</a></li>
+      ))}
+    </ul>
+    <a href="/areas" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg">Areas we cover</a>
+  </div>
+</Layout>

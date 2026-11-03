@@ -1,0 +1,139 @@
+---
+import { PHONE_DISPLAY, PHONE_TEL, SERVICES } from '../data/site';
+
+interface Props {
+  serviceName?: string;
+  locationName?: string;
+}
+
+const { serviceName, locationName } = Astro.props;
+const scope = serviceName && locationName
+  ? `${serviceName.toLowerCase()} in ${locationName}`
+  : 'your painting or decorating project';
+const inputClass = 'w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none';
+---
+
+<div class="bg-white p-7 rounded-xl shadow-lg border border-gray-200 scroll-mt-24" id="quote">
+  <div class="flex items-center justify-between mb-4 gap-3">
+    <h2 class="text-xl font-bold text-gray-900">Request a Free Quote</h2>
+    <span class="text-xs bg-emerald-100 text-emerald-800 font-medium px-2 py-0.5 rounded">24h Response</span>
+  </div>
+  <p class="text-xs text-gray-500 mb-5">Get a tailored estimate for {scope} with zero obligation.</p>
+
+  <form class="space-y-4" data-quote-form data-location={locationName ?? ''}>
+    <div class="hidden" aria-hidden="true">
+      <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+    </div>
+    {serviceName ? (
+      <input type="hidden" name="service" value={serviceName} />
+    ) : (
+      <div>
+        <label for="quote-service" class="block text-xs font-semibold text-gray-700 mb-1">Service</label>
+        <select id="quote-service" name="service" class={inputClass}>
+          {SERVICES.map((s) => <option value={s.name}>{s.name}</option>)}
+        </select>
+      </div>
+    )}
+    <div>
+      <label for="quote-name" class="block text-xs font-semibold text-gray-700 mb-1">Your Full Name</label>
+      <input type="text" id="quote-name" name="name" autocomplete="name" placeholder="e.g. David Smith" class={inputClass} required />
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for="quote-phone" class="block text-xs font-semibold text-gray-700 mb-1">Phone Number</label>
+        <input type="tel" id="quote-phone" name="phone" autocomplete="tel" placeholder="e.g. 07123 456789" class={inputClass} />
+      </div>
+      <div>
+        <label for="quote-email" class="block text-xs font-semibold text-gray-700 mb-1">Email</label>
+        <input type="email" id="quote-email" name="email" autocomplete="email" placeholder="name@example.co.uk" class={inputClass} />
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for="quote-address" class="block text-xs font-semibold text-gray-700 mb-1">Postcode / Address</label>
+        <input type="text" id="quote-address" name="address" autocomplete="postal-code" placeholder={locationName ? `Postcode in ${locationName}` : 'e.g. NW1 2AB'} class={inputClass} />
+      </div>
+      <div>
+        <label for="quote-date" class="block text-xs font-semibold text-gray-700 mb-1">Preferred Start Date</label>
+        <input type="date" id="quote-date" name="start_date" class={inputClass} />
+      </div>
+    </div>
+    <div>
+      <label for="quote-method" class="block text-xs font-semibold text-gray-700 mb-1">Preferred Contact Method</label>
+      <select id="quote-method" name="contact_method" class={inputClass}>
+        <option value="Phone">Phone</option>
+        <option value="Email">Email</option>
+        <option value="WhatsApp">WhatsApp</option>
+      </select>
+    </div>
+    <div>
+      <label for="quote-details" class="block text-xs font-semibold text-gray-700 mb-1">Project Scope & Timeline</label>
+      <textarea id="quote-details" name="details" rows="3" placeholder="Tell us about the property, rooms, or surfaces to decorate..." class={inputClass}></textarea>
+    </div>
+    <button type="submit" class="w-full py-3 px-4 rounded-md shadow text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition disabled:opacity-60">
+      Get My Free Estimate Now
+    </button>
+    <p class="text-sm rounded-md px-3 py-2 hidden" role="status" data-quote-status></p>
+    <p class="text-[11px] text-gray-400 text-center">Strictly no spam. Protected by our GDPR <a href="/privacy" class="underline">Privacy Policy</a>.</p>
+  </form>
+</div>
+
+<script define:vars={{ phone: PHONE_DISPLAY, tel: PHONE_TEL }}>
+  // Leads go to the group form service (form.highland-travel.com), which records
+  // the source site from the Origin header.
+  const ENDPOINT = 'https://form.highland-travel.com';
+
+  document.querySelectorAll('[data-quote-form]').forEach((form) => {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const status = form.querySelector('[data-quote-status]');
+      const button = form.querySelector('button[type="submit"]');
+      const show = (ok, html) => {
+        status.innerHTML = html;
+        status.className = 'text-sm rounded-md px-3 py-2 ' + (ok ? 'bg-emerald-50 text-emerald-800' : 'bg-amber-50 text-amber-900');
+      };
+      const fallback = 'Please call us on <a class="underline font-semibold" href="tel:' + tel + '">' + phone + '</a>.';
+      const f = Object.fromEntries(new FormData(form));
+      if (f.website) return; // honeypot
+
+      const phoneValue = (f.phone || '').trim();
+      const emailValue = (f.email || '').trim();
+      if (!phoneValue && !emailValue) {
+        show(false, 'Please enter a phone number or an email address so we can reply.');
+        return;
+      }
+
+      const location = form.dataset.location;
+      const payload = {
+        name: (f.name || '').trim(),
+        phone: phoneValue,
+        email: emailValue,
+        address: (f.address || '').trim(),
+        start_date: f.start_date || '',
+        tour: location ? f.service + ' - ' + location : f.service,
+        contact_method: f.contact_method || '',
+        message: [
+          (f.details || '').trim(),
+          'Page: ' + window.location.href,
+        ].filter(Boolean).join('\n\n'),
+      };
+
+      button.disabled = true;
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        form.reset();
+        show(true, 'Thank you — your request has been received. We will contact you within 24 hours.');
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: 'quote' });
+      } catch {
+        show(false, 'Sorry, your request could not be sent online. ' + fallback);
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
+</script>

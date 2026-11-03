@@ -1,33 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import QuoteForm from '../components/QuoteForm.astro';
 import pseoData from '../data/pseo_data.json';
-
-const siteUrl = 'https://approveddecorators.co.uk';
+import { SERVICES } from '../data/site';
 
 // Popular locations for quick crawlable shortcuts
 const popularLondon = pseoData.filter(d => d.location.is_london && d.service.id === 'exterior-house-painting').slice(0, 8);
 const popularCities = pseoData.filter(d => !d.location.is_london && d.service.id === 'exterior-house-painting').slice(0, 8);
-
-const homeSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${siteUrl}/#website`,
-  "name": "ApprovedDecorators",
-  "url": siteUrl,
-  "description": "UK's leading network of verified painting and decorating specialists covering London and all major UK cities.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${siteUrl}/areas#{search_term_string}`,
-    "query-input": "required name=search_term_string"
-  }
-};
 ---
 
 <Layout 
   title="ApprovedDecorators | UK Painting & Decorating Contractors" 
   description="ApprovedDecorators connects UK homeowners and businesses with vetted painters & decorators. £2M insurance, 12-month guarantee & transparent pricing."
-  canonical={siteUrl}
-  schema={homeSchema}
+  hasQuoteForm
 >
 	<!-- Hero Section with BLUF (Bottom Line Up Front) -->
 	<section class="bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 py-20 text-white relative overflow-hidden">
@@ -44,7 +29,7 @@ const homeSchema = {
 
 			<!-- BLUF: Bottom Line Up Front for Users and LLM Crawlers -->
 			<p class="text-lg sm:text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-				<strong>The Bottom Line:</strong> Stop gambling on unverified tradesmen. ApprovedDecorators connects you directly with insured, 4-tier vetted local painters across Greater London and 15 major UK metropolitan hubs with a strict <strong>12-Month Guarantee</strong> and <strong>£2,000,000 Public Liability Insurance</strong>.
+				<strong>In short:</strong> Stop gambling on unverified tradesmen. ApprovedDecorators connects you directly with insured, 4-tier vetted local painters across Greater London and 15 major UK metropolitan hubs with a strict <strong>12-Month Guarantee</strong> and <strong>£2,000,000 Public Liability Insurance</strong>.
 			</p>
 
 			<div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -83,7 +68,7 @@ const homeSchema = {
 	</section>
 
 	<!-- Core Services Bento Grid -->
-	<section class="py-18 bg-white">
+	<section class="py-16 bg-white">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="text-center mb-14">
 				<h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Specialised Decorating Services</h2>
@@ -93,57 +78,20 @@ const homeSchema = {
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-				<a href="/services" class="block group">
-					<div class="bg-gray-50 rounded-xl p-7 border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all h-full flex flex-col justify-between">
-						<div>
-							<div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition">🏡</div>
-							<h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 mb-2">Exterior House Painting</h3>
-							<p class="text-sm text-gray-600 leading-relaxed">Weather-resistant masonry painting, timber sash window restoration, and heritage brick protection.</p>
+				{SERVICES.map((service) => (
+					<a href={`/${service.id}`} class="block group">
+						<div class="bg-gray-50 rounded-xl p-7 border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all h-full flex flex-col justify-between">
+							<div>
+								<div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition" aria-hidden="true">{service.icon}</div>
+								<h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 mb-2">{service.name}</h3>
+								<p class="text-sm text-gray-600 leading-relaxed">{service.summary}</p>
+							</div>
+							<div class="mt-6 text-xs font-semibold text-blue-600 flex items-center gap-1">
+								<span>Prices &amp; areas</span> <span>&rarr;</span>
+							</div>
 						</div>
-						<div class="mt-6 text-xs font-semibold text-blue-600 flex items-center gap-1">
-							<span>Learn More & Pricing</span> <span>&rarr;</span>
-						</div>
-					</div>
-				</a>
-
-				<a href="/services" class="block group">
-					<div class="bg-gray-50 rounded-xl p-7 border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all h-full flex flex-col justify-between">
-						<div>
-							<div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition">🏢</div>
-							<h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 mb-2">Commercial Decorating</h3>
-							<p class="text-sm text-gray-600 leading-relaxed">Fast-turnaround, out-of-hours painting for corporate offices, retail stores, and commercial venues.</p>
-						</div>
-						<div class="mt-6 text-xs font-semibold text-blue-600 flex items-center gap-1">
-							<span>Learn More & Pricing</span> <span>&rarr;</span>
-						</div>
-					</div>
-				</a>
-
-				<a href="/services" class="block group">
-					<div class="bg-gray-50 rounded-xl p-7 border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all h-full flex flex-col justify-between">
-						<div>
-							<div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition">📜</div>
-							<h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 mb-2">Wallpaper Specialists</h3>
-							<p class="text-sm text-gray-600 leading-relaxed">Precision installation of high-end designer papers, mural installations, and feature walls.</p>
-						</div>
-						<div class="mt-6 text-xs font-semibold text-blue-600 flex items-center gap-1">
-							<span>Learn More & Pricing</span> <span>&rarr;</span>
-						</div>
-					</div>
-				</a>
-
-				<a href="/services" class="block group">
-					<div class="bg-gray-50 rounded-xl p-7 border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all h-full flex flex-col justify-between">
-						<div>
-							<div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition">🍳</div>
-							<h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 mb-2">Kitchen Cabinet Spraying</h3>
-							<p class="text-sm text-gray-600 leading-relaxed">Factory-smooth, durable spray painting that transforms tired kitchens at 20% of renovation cost.</p>
-						</div>
-						<div class="mt-6 text-xs font-semibold text-blue-600 flex items-center gap-1">
-							<span>Learn More & Pricing</span> <span>&rarr;</span>
-						</div>
-					</div>
-				</a>
+					</a>
+				))}
 			</div>
 		</div>
 	</section>
@@ -196,6 +144,13 @@ const homeSchema = {
 					<span>&rarr;</span>
 				</a>
 			</div>
+		</div>
+	</section>
+
+	<!-- Quote request -->
+	<section class="py-16 bg-white border-t border-gray-200">
+		<div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+			<QuoteForm />
 		</div>
 	</section>
 </Layout>
