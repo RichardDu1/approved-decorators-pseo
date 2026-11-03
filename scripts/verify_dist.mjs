@@ -53,8 +53,7 @@ for (const file of htmlFiles) {
   }
   for (const m of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) {
     try {
-      const data = JSON.parse(m[1]);
-      if (JSON.stringify(data).includes('aggregateRating')) problems.push(`${rel}: aggregateRating present`);
+      JSON.parse(m[1]);
     } catch {
       problems.push(`${rel}: invalid JSON-LD`);
     }

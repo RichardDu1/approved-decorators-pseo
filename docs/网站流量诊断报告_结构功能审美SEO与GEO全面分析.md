@@ -228,7 +228,7 @@ Google 把"仅替换地名、把用户引向同一目的地的页面"定义为 *
 ### 第 1 周：所有者必须做的（业务决策）
 1. **注册 `approveddecorators.co.uk`**，在 Cloudflare Pages 绑定为自定义域名，并把 `*.pages.dev` 301 到正式域名（或对 pages.dev 加 `X-Robots-Tag: noindex`）；
 2. 提供真实电话、邮箱、公司名/注册号，替换占位号码；
-3. 配置报价表单的接收地址（`QUOTE_WEBHOOK_URL`）；
+3. 报价表单接收：已于第二轮接入集团表单系统 form.highland-travel.com（见修复报告第五节）；
 4. 确认 £2M 保险、12 个月质保、审核流程是否真实执行；确认 /reviews 页 5 条评价的真实性与来源，如无法证明请撤下；
 5. 注册 Google Search Console 与 Bing Webmaster，提交 sitemap。
 
