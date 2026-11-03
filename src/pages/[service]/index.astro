@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import pseoData from '../../data/pseo_data.json';
+import { SITE_URL, SITE_NAME, ORG_ID, SERVICES, absoluteUrl } from '../../data/site';
+
+export function getStaticPaths() {
+  return SERVICES.map((service) => ({
+    params: { service: service.id },
+    props: { serviceId: service.id }
+  }));
+}
+
+const { serviceId } = Astro.props;
+const service = SERVICES.find((s) => s.id === serviceId)!;
+const entries = pseoData.filter((d) => d.service.id === serviceId);
+const london = entries.filter((d) => d.location.is_london).sort((a, b) => a.location.name.localeCompare(b.location.name));
+const cities = entries.filter((d) => !d.location.is_london).sort((a, b) => a.location.name.localeCompare(b.location.name));
+
+// Pricing is uniform within London and within the other cities, so show one row each.
+const londonPricing = london[0].economic_context.pricing;
+const cityPricing = cities[0].economic_context.pricing;
+const pageUrl = absoluteUrl(`/${service.id}`);
+
+const title = `${service.name} in London & 15 UK Cities – Price Guide | ${SITE_NAME}`;
+const description = `${service.name}: estimated prices from £${cityPricing.small} (UK cities) and £${londonPricing.small} (London), what each price band covers, and local pages for 15 London boroughs and 15 UK cities.`;
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": absoluteUrl('/services') },
+      { "@type": "ListItem", "position": 3, "name": service.name, "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    "name": service.name,
+    "serviceType": service.name,
+    "url": pageUrl,
+    "description": description,
+    "provider": { "@id": ORG_ID },
+    "areaServed": { "@type": "Country", "name": "United Kingdom" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "GBP",
+      "lowPrice": cityPricing.small,
+      "highPrice": londonPricing.large
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": `${service.name} by area`,
+    "itemListElement": [...london, ...cities].map((d, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `${service.name} in ${d.location.name}`,
+      "url": absoluteUrl(`/${service.id}/${d.location.id}`)
+    }))
+  }
+];
+---
+
+<Layout title={title} description={description} schema={schema}>
+  <nav class="bg-gray-100 border-b border-gray-200 text-xs py-3" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-2 text-gray-500">
+      <a href="/" class="hover:text-blue-600">Home</a>
+      <span>/</span>
+      <a href="/services" class="hover:text-blue-600">Services</a>
+      <span>/</span>
+      <span class="text-gray-900 font-medium" aria-current="page">{service.name}</span>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-4">{service.icon} {service.name}</h1>
+    <p class="text-lg text-gray-600 max-w-3xl mb-10">{service.summary} Available in 15 London boroughs and 15 major UK cities.</p>
+
+    <section class="mb-14" aria-labelledby="price-guide">
+      <h2 id="price-guide" class="text-2xl font-bold text-gray-900 mb-4">Price guide</h2>
+      <p class="text-sm text-gray-600 mb-4 max-w-3xl">Estimated starting prices published on our local pages. Final prices are agreed after a site survey (see our <a href="/terms" class="text-blue-600 underline">terms</a>).</p>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm bg-white border border-gray-200 rounded-lg">
+          <thead class="bg-gray-50 text-left text-gray-700">
+            <tr>
+              <th scope="col" class="px-4 py-3 font-semibold">Area</th>
+              <th scope="col" class="px-4 py-3 font-semibold">Small scope</th>
+              <th scope="col" class="px-4 py-3 font-semibold">Medium scope</th>
+              <th scope="col" class="px-4 py-3 font-semibold">Full property / commercial</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <th scope="row" class="px-4 py-3 font-medium text-gray-900">London boroughs</th>
+              <td class="px-4 py-3">from £{londonPricing.small}</td>
+              <td class="px-4 py-3">from £{londonPricing.medium}</td>
+              <td class="px-4 py-3">from £{londonPricing.large}</td>
+            </tr>
+            <tr>
+              <th scope="row" class="px-4 py-3 font-medium text-gray-900">Other UK cities</th>
+              <td class="px-4 py-3">from £{cityPricing.small}</td>
+              <td class="px-4 py-3">from £{cityPricing.medium}</td>
+              <td class="px-4 py-3">from £{cityPricing.large}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 mt-2">Small: single room, accent wall or small facade. Medium: 2–3 rooms, full kitchen cabinetry or townhouse front. Full property: whole house or commercial space.</p>
+    </section>
+
+    <section class="mb-12" aria-labelledby="london-areas">
+      <h2 id="london-areas" class="text-2xl font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">{service.name} in London</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {london.map((d) => (
+          <li>
+            <a href={`/${service.id}/${d.location.id}`} class="block bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-blue-500 hover:bg-blue-50 transition">
+              <span class="font-semibold text-blue-700">{d.location.name}</span>
+              <span class="block text-xs text-gray-500">Postcodes {d.location.postcode_areas.join(', ')}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-12" aria-labelledby="city-areas">
+      <h2 id="city-areas" class="text-2xl font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">{service.name} in other UK cities</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {cities.map((d) => (
+          <li>
+            <a href={`/${service.id}/${d.location.id}`} class="block bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-blue-500 hover:bg-blue-50 transition">
+              <span class="font-semibold text-blue-700">{d.location.name}</span>
+              <span class="block text-xs text-gray-500">Postcode area {d.location.postcode_areas.join(', ')}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="other-services">
+      <h2 id="other-services" class="text-xl font-bold text-gray-900 mb-3">Other services</h2>
+      <ul class="flex flex-wrap gap-2">
+        {SERVICES.filter((s) => s.id !== service.id).map((s) => (
+          <li><a href={`/${s.id}`} class="inline-block bg-gray-50 border border-gray-300 hover:border-blue-500 hover:text-blue-700 rounded-md px-3 py-1.5 text-sm">{s.name}</a></li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</Layout>

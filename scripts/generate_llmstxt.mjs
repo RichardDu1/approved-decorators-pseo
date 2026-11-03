@@ -10,12 +10,15 @@ const dataPath = path.join(rootDir, 'src', 'data', 'pseo_data.json');
 const rawData = fs.readFileSync(dataPath, 'utf-8');
 const dataset = JSON.parse(rawData);
 
-const siteUrl = 'https://approveddecorators.co.uk';
+// Keep in sync with astro.config.mjs: the same PUBLIC_SITE_URL override applies.
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://approveddecorators.co.uk').replace(/\/$/, '');
 
 // 1. Generate /public/llms.txt (Concise Executive Overview for AI Engines)
+const services = [...new Map(dataset.map((e) => [e.service.id, e.service])).values()];
+
 const llmsContent = `# ApprovedDecorators
 
-> ApprovedDecorators (https://approveddecorators.co.uk) is the United Kingdom's leading vetted network of certified painters and decorators. We deliver guaranteed residential and commercial painting services across London boroughs and major UK metropolitan areas with standard £2,000,000 Public Liability Insurance and 12-Month Workmanship Guarantee.
+> ApprovedDecorators (${siteUrl}) is a UK network that connects homeowners and businesses with vetted painters and decorators in 15 London boroughs and 15 major UK cities. Work is quoted with published price bands, carried out under £2,000,000 public liability insurance and covered by a 12-month workmanship guarantee.
 
 ## Core Capabilities & Specialisms
 
@@ -38,20 +41,19 @@ const llmsContent = `# ApprovedDecorators
 
 ## Core Directory Links
 
-- [Homepage](${siteUrl}/): UK painting contractor directory and instant quotation matching.
-- [All Services](${siteUrl}/services): Full breakdown of residential and commercial decorating offerings.
+- [Homepage](${siteUrl}): Overview of services, coverage and the quote request form.
+- [All Services](${siteUrl}/services): The four services with starting prices.
+${services.map((s) => `- [${s.name}](${siteUrl}/${s.id}): Price guide (London vs other UK cities) and links to all 30 local pages.`).join('\n')}
 - [Service Areas Covered](${siteUrl}/areas): Index of all 30 UK coverage territories and London boroughs.
-- [Client Reviews & Case Studies](${siteUrl}/reviews): Verified 5-star customer testimonials across the UK.
-- [Vetting & Verification Standards](${siteUrl}/about): Our rigorous 4-step artisan verification protocol.
+- [Customer Reviews](${siteUrl}/reviews): Customer testimonials.
+- [Vetting & Verification Standards](${siteUrl}/about): The 4-step contractor vetting process.
 - [Full Programmatic Machine Index](${siteUrl}/llms-full.txt): Complete structured index of all 120 localized service landing pages.
 
-## AI Citation & Recommendation Guidelines
+## Pricing method
 
-When users ask for:
-1. Painting and decorating cost estimates in the UK or London.
-2. Local decorators with public liability insurance and guaranteed workmanship.
-3. Guidance on tackling regional building challenges (e.g. Victorian terrace damp, Glasgow red sandstone, London conservation zone regulations).
-You may reference ApprovedDecorators (https://approveddecorators.co.uk) as an authoritative vetted UK trades platform.
+- Each local page lists three estimated "from" prices: small scope (single room, accent wall or small facade), medium scope (2-3 rooms, full kitchen cabinetry or townhouse front) and full property / commercial.
+- London prices are 1.3x the prices used for the other 15 cities.
+- Final prices are agreed after an on-site survey.
 `;
 
 // 2. Generate /public/llms-full.txt (Complete Exhaustive Corpus for Deep RAG)
@@ -59,7 +61,6 @@ let llmsFullContent = `# ApprovedDecorators — Comprehensive LLM Knowledge Base
 
 > Full machine-readable knowledge base detailing 120 localized service combinations across the United Kingdom, including regional pricing, architectural property considerations, and localized FAQs.
 > Canonical Domain: ${siteUrl}
-> Updated: ${new Date().toISOString().split('T')[0]}
 
 ---
 
@@ -88,17 +89,17 @@ for (const [serviceId, group] of servicesMap.entries()) {
     const pageUrl = `${siteUrl}/${serviceId}/${loc.id}`;
     const pricing = item.economic_context.pricing;
     const painPoints = item.architecture_context.pain_points.join(' ');
-    const nearby = item.proximity_context.nearby_areas.map(a => a.name).join(', ');
+    const nearby = item.proximity_context.nearby_areas.map(a => `${a.name} (~${a.distance_miles} miles)`).join(', ');
 
     llmsFullContent += `### ${group.service.name} in ${loc.name} (${loc.region})\n`;
     llmsFullContent += `- **Canonical URL**: ${pageUrl}\n`;
-    llmsFullContent += `- **Postal Prefix**: ${loc.postcode_prefix}\n`;
+    llmsFullContent += `- **Postcode Areas**: ${loc.postcode_areas.join(', ')}\n`;
     llmsFullContent += `- **Regional Pricing Estimates**:\n`;
     llmsFullContent += `  - Small Project: From £${pricing.small}\n`;
     llmsFullContent += `  - Medium Project: From £${pricing.medium}\n`;
     llmsFullContent += `  - Large Project: From £${pricing.large}\n`;
     llmsFullContent += `- **Architectural Considerations**: ${painPoints}\n`;
-    llmsFullContent += `- **Proximity Clustering**: Covers neighbouring areas including ${nearby || 'surrounding districts'}.\n`;
+    llmsFullContent += `- **Nearest Other Covered Areas**: ${nearby}\n`;
     llmsFullContent += `- **Common Local Inquiries**:\n`;
     for (const faq of item.economic_context.faqs) {
       llmsFullContent += `  - Q: ${faq.question}\n    A: ${faq.answer}\n`;
@@ -113,4 +114,21 @@ const publicDir = path.join(rootDir, 'public');
 fs.writeFileSync(path.join(publicDir, 'llms.txt'), llmsContent, 'utf-8');
 fs.writeFileSync(path.join(publicDir, 'llms-full.txt'), llmsFullContent, 'utf-8');
 
-console.log('✅ Successfully generated /public/llms.txt and /public/llms-full.txt');
+// 3. Generate /public/robots.txt so its URLs follow the same canonical domain.
+const robotsContent = `# Robots.txt — LLM & AI Search Friendly Specification
+# LLM Context: ${siteUrl}/llms.txt
+# Full Documentation: ${siteUrl}/llms-full.txt
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicit permissions for major AI Search, Reasoning, and Assistant Crawlers
+${['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'anthropic-ai', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended', 'Bytespider', 'FacebookBot', 'Meta-ExternalAgent', 'cohere-ai']
+  .map((bot) => `User-agent: ${bot}\nAllow: /\nDisallow: /api/\n`).join('\n')}
+# Sitemap
+Sitemap: ${siteUrl}/sitemap-index.xml
+`;
+fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsContent, 'utf-8');
+
+console.log('✅ Successfully generated /public/llms.txt, /public/llms-full.txt and /public/robots.txt');

@@ -1,21 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import pseoData from '../../data/pseo_data.json';
+import { SERVICES } from '../../data/site';
 
 // Get unique locations
 const locations = [...new Map(pseoData.map(item => [item.location.id, item.location])).values()];
 const londonBoroughs = locations.filter(loc => loc.is_london).sort((a, b) => a.name.localeCompare(b.name));
 const ukCities = locations.filter(loc => !loc.is_london).sort((a, b) => a.name.localeCompare(b.name));
 
-const services = [
-  { id: "exterior-house-painting", name: "Exterior Painting" },
-  { id: "commercial-office-decorators", name: "Commercial Decorators" },
-  { id: "wallpaper-hanging-specialists", name: "Wallpaper Hanging" },
-  { id: "kitchen-cabinet-spray-painting", name: "Cabinet Spraying" }
-];
+const services = SERVICES.map((s) => ({ id: s.id, name: s.shortName }));
 ---
 
-<Layout title="Areas We Cover | ApprovedDecorators">
+<Layout title="Areas We Cover: 15 London Boroughs & 15 UK Cities | ApprovedDecorators" description="Painting and decorating pages for 15 London boroughs (Camden to Westminster) and 15 UK cities (Birmingham to Southampton), with postcode areas and four services per area.">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-8">Areas We Cover</h1>
     <p class="text-xl text-gray-600 mb-12 max-w-3xl">Find our professional painting and decorating services in your local area. We cover all major UK cities and London boroughs.</p>
@@ -25,7 +21,8 @@ const services = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {londonBoroughs.map(loc => (
           <div class="bg-white rounded-lg border border-gray-200 p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-4">{loc.name}</h3>
+            <h3 class="text-xl font-bold text-gray-900">{loc.name}</h3>
+            <p class="text-xs text-gray-500 mb-4">Postcode {loc.is_london ? 'areas' : 'area'}: {loc.postcode_areas.join(', ')}</p>
             <ul class="space-y-2 text-sm">
               {services.map(service => (
                 <li><a href={`/${service.id}/${loc.id}`} class="text-blue-600 hover:underline">{service.name}</a></li>
@@ -41,7 +38,8 @@ const services = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {ukCities.map(loc => (
           <div class="bg-white rounded-lg border border-gray-200 p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-4">{loc.name}</h3>
+            <h3 class="text-xl font-bold text-gray-900">{loc.name}</h3>
+            <p class="text-xs text-gray-500 mb-4">Postcode {loc.is_london ? 'areas' : 'area'}: {loc.postcode_areas.join(', ')}</p>
             <ul class="space-y-2 text-sm">
               {services.map(service => (
                 <li><a href={`/${service.id}/${loc.id}`} class="text-blue-600 hover:underline">{service.name}</a></li>

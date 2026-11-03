@@ -1,7 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import FactSheet from '../../components/FactSheet.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
 import pseoData from '../../data/pseo_data.json';
+import { SITE_URL, SITE_NAME, ORG_ID, PHONE_DISPLAY, PHONE_TEL, SERVICES, absoluteUrl } from '../../data/site';
 
 export async function getStaticPaths() {
   return pseoData.map((data) => {
@@ -20,13 +22,15 @@ export async function getStaticPaths() {
 const { data } = Astro.props;
 const { service, location, architecture_context, economic_context, proximity_context } = data;
 
-const siteUrl = 'https://approveddecorators.co.uk';
-const pageUrl = `${siteUrl}/${service.id}/${location.id}`;
+const pageUrl = absoluteUrl(`/${service.id}/${location.id}`);
+const serviceHubUrl = absoluteUrl(`/${service.id}`);
+const postcodeAreas: string[] = location.postcode_areas;
+const otherServices = SERVICES.filter((s) => s.id !== service.id);
 
-const title = `Expert ${service.name} in ${location.name} | ApprovedDecorators`;
-const description = `Looking for ${service.name.toLowerCase()} in ${location.name}? Verified local decorators, transparent pricing from £${economic_context.pricing.small}, £2M insurance & 12-month guarantee. Request your free quote today.`;
+const title = `${service.name} in ${location.name} – Prices from £${economic_context.pricing.small} | ${SITE_NAME}`;
+const description = `${service.name} in ${location.name} (${postcodeAreas.join(', ')} postcodes): estimated prices £${economic_context.pricing.small}–£${economic_context.pricing.large}, typical 2–5 day jobs, £2M public liability insurance and a 12-month guarantee. Free quote.`;
 
-// Schema 1: BreadcrumbList
+// Schema 1: BreadcrumbList (mirrors the visible breadcrumb)
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -35,13 +39,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": siteUrl
+      "item": SITE_URL
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Services",
-      "item": `${siteUrl}/services`
+      "name": service.name,
+      "item": serviceHubUrl
     },
     {
       "@type": "ListItem",
@@ -52,51 +56,36 @@ const breadcrumbSchema = {
   ]
 };
 
-// Schema 2: LocalBusiness / PaintingContractor
-const localBusinessSchema = {
+// Schema 2: Service offered by the single organisation in a specific area.
+// (No LocalBusiness per page: there is no real local address to publish.)
+const areaServed = location.is_london
+  ? {
+      "@type": "AdministrativeArea",
+      "name": `London Borough of ${location.name}`,
+      "containedInPlace": { "@type": "City", "name": "London" }
+    }
+  : { "@type": "City", "name": location.name };
+
+const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "@id": `${pageUrl}/#localbusiness`,
-  "name": `ApprovedDecorators - ${service.name} in ${location.name}`,
+  "@type": "Service",
+  "@id": `${pageUrl}#service`,
+  "name": `${service.name} in ${location.name}`,
+  "serviceType": service.name,
   "url": pageUrl,
-  "telephone": "+44-800-123-4567",
-  "priceRange": `£${economic_context.pricing.small} - £${economic_context.pricing.large}`,
   "description": description,
-  "serviceArea": {
-    "@type": "AdministrativeArea",
-    "name": location.name
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": location.name
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": `${service.name} Pricing Tiers`,
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Small Project",
-        "price": economic_context.pricing.small,
-        "priceCurrency": "GBP"
-      },
-      {
-        "@type": "Offer",
-        "name": "Medium Project",
-        "price": economic_context.pricing.medium,
-        "priceCurrency": "GBP"
-      },
-      {
-        "@type": "Offer",
-        "name": "Large Project",
-        "price": economic_context.pricing.large,
-        "priceCurrency": "GBP"
-      }
-    ]
+  "provider": { "@id": ORG_ID },
+  "areaServed": areaServed,
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "GBP",
+    "lowPrice": economic_context.pricing.small,
+    "highPrice": economic_context.pricing.large,
+    "offerCount": 3
   }
 };
 
-// Schema 3: FAQPage
+// Schema 3: FAQPage (same questions as the visible FAQ section)
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -110,18 +99,16 @@ const faqSchema = {
   }))
 };
 
-const pageSchemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
+const pageSchemas = [breadcrumbSchema, serviceSchema, faqSchema];
 ---
 
-<Layout title={title} description={description} canonical={pageUrl} schema={pageSchemas} type="service">
+<Layout title={title} description={description} canonical={pageUrl} schema={pageSchemas} type="service" hasQuoteForm>
   <!-- Breadcrumb Navigation -->
   <nav class="bg-gray-100 border-b border-gray-200 text-xs py-3" aria-label="Breadcrumb">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-2 text-gray-500">
       <a href="/" class="hover:text-blue-600">Home</a>
       <span>/</span>
-      <a href="/services" class="hover:text-blue-600">Services</a>
-      <span>/</span>
-      <a href="/areas" class="hover:text-blue-600">Areas</a>
+      <a href={`/${service.id}`} class="hover:text-blue-600">{service.name}</a>
       <span>/</span>
       <span class="text-gray-900 font-medium" aria-current="page">{service.name} in {location.name}</span>
     </div>
@@ -131,26 +118,26 @@ const pageSchemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
   <section class="bg-gradient-to-b from-blue-50 to-white py-14 md:py-20 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
-        <span>📍 Vetted Local Specialists</span>
+        <span>📍 {location.is_london ? `London Borough` : 'UK City'}</span>
         <span>•</span>
-        <span>{location.region} {location.postcode_prefix ? `(${location.postcode_prefix})` : ''}</span>
+        <span>Postcode areas: {postcodeAreas.join(', ')}</span>
       </div>
 
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
-        Expert {service.name} in {location.name}
+        {service.name} in {location.name}
       </h1>
 
       <!-- BLUF Executive Summary for AI & Users -->
       <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 leading-relaxed">
-        <strong>The Bottom Line:</strong> Looking for professional {service.name.toLowerCase()} in {location.name}? ApprovedDecorators connects you directly with insured, verified local craftsmen. Standard rates range from <strong>£{economic_context.pricing.small}</strong> to <strong>£{economic_context.pricing.large}</strong> with a strict <strong>12-Month Workmanship Guarantee</strong> and <strong>£2M Public Liability Insurance</strong>.
+        <strong>In short:</strong> Looking for professional {service.name.toLowerCase()} in {location.name}? ApprovedDecorators connects you directly with insured, verified local craftsmen. Standard rates range from <strong>£{economic_context.pricing.small}</strong> to <strong>£{economic_context.pricing.large}</strong> with a strict <strong>12-Month Workmanship Guarantee</strong> and <strong>£2M Public Liability Insurance</strong>.
       </p>
 
       <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
         <a href="#quote" class="bg-blue-600 text-white px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-blue-700 shadow-md transition">
           Get a Fast Free Quote
         </a>
-        <a href="tel:08001234567" class="bg-white text-blue-600 border border-blue-600 px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-blue-50 transition flex items-center justify-center gap-2">
-          <span>📞 Call 0800 123 4567</span>
+        <a href={`tel:${PHONE_TEL}`} class="bg-white text-blue-600 border border-blue-600 px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-blue-50 transition flex items-center justify-center gap-2">
+          <span>📞 Call {PHONE_DISPLAY}</span>
         </a>
       </div>
 
@@ -158,8 +145,7 @@ const pageSchemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
       <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-gray-600">
         <span class="flex items-center gap-1.5"><strong class="text-emerald-600">✓</strong> £2M Public Liability</span>
         <span class="flex items-center gap-1.5"><strong class="text-emerald-600">✓</strong> 12-Month Warranty</span>
-        <span class="flex items-center gap-1.5"><strong class="text-emerald-600">✓</strong> Local Property Specialists</span>
-        <span class="flex items-center gap-1.5"><strong class="text-emerald-600">✓</strong> 4.9/5 Client Rating</span>
+        <span class="flex items-center gap-1.5"><strong class="text-emerald-600">✓</strong> Published Price Bands</span>
       </div>
     </div>
   </section>
@@ -215,37 +201,7 @@ const pageSchemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
 
         <!-- Fast Callback / Quote Form -->
         <div class="lg:col-span-5 mt-10 lg:mt-0">
-          <div class="bg-white p-7 rounded-xl shadow-lg border border-gray-200" id="quote">
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-xl font-bold text-gray-900">Request a Free Quote</h3>
-              <span class="text-xs bg-emerald-100 text-emerald-800 font-medium px-2 py-0.5 rounded">24h Response</span>
-            </div>
-            <p class="text-xs text-gray-500 mb-5">Get a tailored estimate for {service.name.toLowerCase()} in {location.name} with zero obligation.</p>
-            
-            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! A local specialist in ' + document.getElementById('city-field').value + ' will contact you shortly.');">
-              <input type="hidden" id="city-field" value={location.name} />
-              <div>
-                <label for="name" class="block text-xs font-semibold text-gray-700 mb-1">Your Full Name</label>
-                <input type="text" id="name" name="name" placeholder="e.g. David Smith" class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none" required />
-              </div>
-              <div>
-                <label for="phone" class="block text-xs font-semibold text-gray-700 mb-1">Phone Number or Email</label>
-                <input type="text" id="phone" name="phone" placeholder="e.g. 07123 456789 or name@example.co.uk" class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none" required />
-              </div>
-              <div>
-                <label for="postcode" class="block text-xs font-semibold text-gray-700 mb-1">Postcode / Location Area</label>
-                <input type="text" id="postcode" name="postcode" value={location.postcode_prefix ? `${location.name} (${location.postcode_prefix})` : location.name} class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm bg-gray-50 text-gray-700 outline-none" />
-              </div>
-              <div>
-                <label for="details" class="block text-xs font-semibold text-gray-700 mb-1">Project Scope & Timeline</label>
-                <textarea id="details" name="details" rows="3" placeholder="Tell us about the property, rooms, or surfaces to decorate..." class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"></textarea>
-              </div>
-              <button type="submit" class="w-full py-3 px-4 rounded-md shadow text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition">
-                Get My Free Estimate Now
-              </button>
-              <p class="text-[11px] text-gray-400 text-center">Strictly no spam. Protected by our GDPR Privacy Policy.</p>
-            </form>
-          </div>
+          <QuoteForm serviceName={service.name} locationName={location.name} />
         </div>
       </div>
     </div>
@@ -323,7 +279,7 @@ const pageSchemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions: {service.name} in {location.name}</h2>
-        <p class="text-sm text-gray-500 mt-2">Common questions answered by our local painting directors.</p>
+        
       </div>
 
       <div class="space-y-6">
@@ -348,29 +304,16 @@ const pageSchemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
           </h3>
           <p class="text-xs text-gray-500 mb-4">Explore other approved trade specialisms available across {location.name}:</p>
           <ul class="space-y-2 text-sm">
-            <li>
-              <a href={`/exterior-house-painting/${location.id}`} class="text-blue-600 hover:text-blue-800 font-medium hover:underline flex justify-between items-center">
-                <span>Exterior House Painting in {location.name}</span>
-                <span class="text-xs text-gray-400">→</span>
-              </a>
-            </li>
-            <li>
-              <a href={`/commercial-office-decorators/${location.id}`} class="text-blue-600 hover:text-blue-800 font-medium hover:underline flex justify-between items-center">
-                <span>Commercial Office Decorators in {location.name}</span>
-                <span class="text-xs text-gray-400">→</span>
-              </a>
-            </li>
-            <li>
-              <a href={`/wallpaper-hanging-specialists/${location.id}`} class="text-blue-600 hover:text-blue-800 font-medium hover:underline flex justify-between items-center">
-                <span>Wallpaper Hanging Specialists in {location.name}</span>
-                <span class="text-xs text-gray-400">→</span>
-              </a>
-            </li>
-            <li>
-              <a href={`/kitchen-cabinet-spray-painting/${location.id}`} class="text-blue-600 hover:text-blue-800 font-medium hover:underline flex justify-between items-center">
-                <span>Kitchen Cabinet Spray Painting in {location.name}</span>
-                <span class="text-xs text-gray-400">→</span>
-              </a>
+            {otherServices.map((other) => (
+              <li>
+                <a href={`/${other.id}/${location.id}`} class="text-blue-600 hover:text-blue-800 font-medium hover:underline flex justify-between items-center">
+                  <span>{other.name} in {location.name}</span>
+                  <span class="text-xs text-gray-400">→</span>
+                </a>
+              </li>
+            ))}
+            <li class="pt-2 mt-2 border-t border-gray-100">
+              <a href={`/${service.id}`} class="text-blue-600 hover:text-blue-800 font-semibold hover:underline">{service.name} in all 30 areas →</a>
             </li>
           </ul>
         </div>
@@ -378,21 +321,21 @@ const pageSchemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
         <!-- Cluster 2: Nearby Proximity Internal Links -->
         <div class="bg-white p-6 rounded-lg border border-gray-200">
           <h3 class="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-            <span>📍</span> Neighbouring Areas Covered from {location.name}
+            <span>📍</span> Nearest Other Areas We Cover
           </h3>
-          <p class="text-xs text-gray-500 mb-4">Need {service.name.toLowerCase()} in a neighbouring district or borough?</p>
+          <p class="text-xs text-gray-500 mb-4">The closest other {location.is_london ? 'London boroughs' : 'UK cities'} with {service.name.toLowerCase()} pages (approximate straight-line distance from {location.name}):</p>
           <div class="flex flex-wrap gap-2">
-            {proximity_context.nearby_areas.map((area: { id: string; name: string }) => (
+            {proximity_context.nearby_areas.map((area: { id: string; name: string; distance_miles: number }) => (
               <a 
                 href={`/${service.id}/${area.id}`} 
                 class="inline-block bg-gray-50 border border-gray-300 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-700 rounded-md px-3 py-1.5 text-xs text-gray-700 font-medium transition"
               >
-                {service.name} in {area.name}
+                {service.name} in {area.name} <span class="text-gray-400">(~{area.distance_miles} mi)</span>
               </a>
             ))}
           </div>
           <div class="mt-4 pt-3 border-t border-gray-100 text-xs">
-            <a href="/areas" class="text-blue-600 hover:underline font-semibold">View All 30 UK Coverage Regions &rarr;</a>
+            <a href="/areas" class="text-blue-600 hover:underline font-semibold">View all 30 areas we cover &rarr;</a>
           </div>
         </div>
       </div>

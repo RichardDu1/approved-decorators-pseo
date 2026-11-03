@@ -1,5 +1,5 @@
 import json
-import random
+import math
 import os
 
 SERVICES = [
@@ -29,37 +29,76 @@ SERVICES = [
     }
 ]
 
+# Main postcode areas and approximate centre coordinates for each location.
+# Postcode areas follow Royal Mail's postcode area codes (e.g. Glasgow = G,
+# Brighton = BN). London boroughs span several areas, so all main ones are listed.
 LONDON_BOROUGHS = [
-    "Camden", "Greenwich", "Hackney", "Hammersmith and Fulham", "Islington",
-    "Kensington and Chelsea", "Lambeth", "Southwark", "Tower Hamlets", "Wandsworth",
-    "Westminster", "Richmond upon Thames", "Ealing", "Hounslow", "Barnet"
+    ("Camden", ["NW", "N", "WC"], 51.5517, -0.1588),
+    ("Greenwich", ["SE"], 51.4892, 0.0648),
+    ("Hackney", ["E", "N"], 51.5450, -0.0553),
+    ("Hammersmith and Fulham", ["W", "SW"], 51.4927, -0.2339),
+    ("Islington", ["N", "EC"], 51.5465, -0.1058),
+    ("Kensington and Chelsea", ["SW", "W"], 51.4991, -0.1938),
+    ("Lambeth", ["SE", "SW"], 51.4571, -0.1231),
+    ("Southwark", ["SE"], 51.4734, -0.0755),
+    ("Tower Hamlets", ["E"], 51.5150, -0.0350),
+    ("Wandsworth", ["SW"], 51.4567, -0.1910),
+    ("Westminster", ["W", "SW", "WC", "NW"], 51.5120, -0.1500),
+    ("Richmond upon Thames", ["TW", "SW"], 51.4479, -0.3260),
+    ("Ealing", ["W", "UB"], 51.5130, -0.3089),
+    ("Hounslow", ["TW", "W"], 51.4609, -0.3731),
+    ("Barnet", ["N", "NW", "EN"], 51.6252, -0.1517),
 ]
 
 UK_CITIES = [
-    "Birmingham", "Manchester", "Glasgow", "Liverpool", "Bristol", 
-    "Leeds", "Sheffield", "Edinburgh", "Cardiff", "Nottingham",
-    "Leicester", "Newcastle", "Southampton", "Derby", "Brighton"
+    ("Birmingham", ["B"], 52.4862, -1.8904),
+    ("Manchester", ["M"], 53.4808, -2.2426),
+    ("Glasgow", ["G"], 55.8642, -4.2518),
+    ("Liverpool", ["L"], 53.4084, -2.9916),
+    ("Bristol", ["BS"], 51.4545, -2.5879),
+    ("Leeds", ["LS"], 53.8008, -1.5491),
+    ("Sheffield", ["S"], 53.3811, -1.4701),
+    ("Edinburgh", ["EH"], 55.9533, -3.1883),
+    ("Cardiff", ["CF"], 51.4816, -3.1791),
+    ("Nottingham", ["NG"], 52.9548, -1.1581),
+    ("Leicester", ["LE"], 52.6369, -1.1398),
+    ("Newcastle", ["NE"], 54.9783, -1.6178),
+    ("Southampton", ["SO"], 50.9097, -1.4044),
+    ("Derby", ["DE"], 52.9225, -1.4746),
+    ("Brighton", ["BN"], 50.8225, -0.1372),
 ]
 
 ALL_LOCATIONS = []
 
-for borough in LONDON_BOROUGHS:
+for name, areas, lat, lon in LONDON_BOROUGHS:
     ALL_LOCATIONS.append({
-        "id": borough.lower().replace(" ", "-"),
-        "name": borough,
+        "id": name.lower().replace(" ", "-"),
+        "name": name,
         "region": "London",
         "is_london": True,
-        "postcode_prefix": random.choice(["N", "NW", "E", "EC", "W", "WC", "SE", "SW"])
+        "postcode_areas": areas,
+        "lat": lat,
+        "lon": lon
     })
 
-for city in UK_CITIES:
+for name, areas, lat, lon in UK_CITIES:
     ALL_LOCATIONS.append({
-        "id": city.lower().replace(" ", "-"),
-        "name": city,
+        "id": name.lower().replace(" ", "-"),
+        "name": name,
         "region": "UK",
         "is_london": False,
-        "postcode_prefix": city[:2].upper()
+        "postcode_areas": areas,
+        "lat": lat,
+        "lon": lon
     })
+
+def distance_miles(a, b):
+    """Great-circle (straight-line) distance between two locations in miles."""
+    r = 3958.8
+    p1, p2 = math.radians(a["lat"]), math.radians(b["lat"])
+    dp, dl = p2 - p1, math.radians(b["lon"] - a["lon"])
+    h = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return 2 * r * math.asin(math.sqrt(h))
 
 def get_architecture_pain_points(location, service_id):
     pain_points = []
@@ -83,11 +122,13 @@ def get_architecture_pain_points(location, service_id):
     return pain_points
 
 def generate_nearby_areas(current_location, all_locations, count=3):
+    """The closest other covered locations in the same region, nearest first."""
     same_region = [loc for loc in all_locations if loc["region"] == current_location["region"] and loc["id"] != current_location["id"]]
-    if not same_region:
-        return []
-    selected = random.sample(same_region, min(count, len(same_region)))
-    return [{"id": s["id"], "name": s["name"]} for s in selected]
+    same_region.sort(key=lambda loc: distance_miles(current_location, loc))
+    return [
+        {"id": s["id"], "name": s["name"], "distance_miles": round(distance_miles(current_location, s))}
+        for s in same_region[:count]
+    ]
 
 def generate_pricing(base_price, is_london):
     multiplier = 1.3 if is_london else 1.0
